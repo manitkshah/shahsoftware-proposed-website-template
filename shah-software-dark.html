@@ -41,6 +41,14 @@
   --shadow-sm:0 4px 14px rgba(15,37,64,0.08);
   --maxw:1160px;
   --maxw-nav:1400px;
+
+  /* illustration palette (dark theme default: bright accents on navy) */
+  --illus-1:#7fe3d4;
+  --illus-2:#7fb2ff;
+  --illus-3:#e8a33d;
+  --illus-navy:#0a1a2e;
+  --illus-line:rgba(255,255,255,0.4);
+  --illus-bg:rgba(255,255,255,0.08);
 }
 
 *,*::before,*::after{box-sizing:border-box;}
@@ -545,6 +553,49 @@ footer{background:var(--navy-deep);color:rgba(255,255,255,0.7);padding:56px 0 26
 .footer-bottom{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between;padding-top:22px;font-size:.85rem;color:rgba(255,255,255,0.5);}
 
 
+/* ===== Illustrations (replace image placeholders; theme via CSS vars) ===== */
+.illus{width:100%;height:100%;display:flex;align-items:center;justify-content:center;padding:20px;}
+.illus svg{width:82%;max-width:340px;height:auto;filter:drop-shadow(0 12px 20px rgba(0,0,0,0.18));animation:illusFloat 5s ease-in-out infinite;}
+@media (prefers-reduced-motion:reduce){.illus svg{animation:none;}}
+@keyframes illusFloat{0%,100%{transform:translateY(0);}50%{transform:translateY(-10px);}}
+.card .card-media .illus{padding:0;}
+.card .card-media .illus svg{max-width:220px;}
+
+/* ===== Live map embeds ===== */
+.map-embed iframe,.footer-map iframe{width:100%;height:100%;min-height:inherit;border:0;display:block;}
+.map-embed{padding:0;}
+.footer-map{padding:0;}
+
+/* ===== Extra interactive polish (bells & whistles) ===== */
+.btn{position:relative;overflow:hidden;}
+.btn::before{
+  content:"";position:absolute;top:0;left:-60%;width:40%;height:100%;
+  background:linear-gradient(120deg,transparent,rgba(255,255,255,0.45),transparent);
+  transform:skewX(-20deg);transition:left .6s ease;pointer-events:none;
+}
+.btn:hover::before{left:120%;}
+
+.hero h1 span{
+  background-size:200% auto;
+  animation:shimmerText 5s linear infinite;
+}
+@keyframes shimmerText{0%{background-position:0% 50%;}100%{background-position:200% 50%;}}
+@media (prefers-reduced-motion:reduce){.hero h1 span{animation:none;}}
+
+.testimonial-full .review-card,.reviews-grid .review-card{transform-style:preserve-3d;perspective:800px;}
+.testimonial-full .review-card:hover,.reviews-grid .review-card:hover{transform:translateY(-6px) rotateX(2deg) rotateY(-2deg);}
+
+.logo-mark{position:relative;}
+.logo-mark::after{
+  content:"";position:absolute;inset:-4px;border-radius:14px;border:2px solid var(--teal);
+  opacity:0;transform:scale(.85);transition:opacity .3s ease, transform .3s ease;pointer-events:none;
+}
+.logo:hover .logo-mark::after{opacity:.6;transform:scale(1);}
+
+/* ===========================================================
+   Single-file page switching (no JS): each "page" is shown/hidden
+   via the URL fragment (:target). #home is the default view.
+   =========================================================== */
 main.pages{display:flex;flex-direction:column;}
 .page{display:none;}
 .page:target{display:block;}
@@ -624,7 +675,24 @@ body:has(#privacy-policy:target) .nav-links a[href="#privacy-policy"]::after{
       <h1>Providing customized software solutions since 1994</h1>
       <p>From a small start-up in rural Texas to a nationwide leader — see how Shah Software got here.</p>
       <div class="page-hero-media">
-        <div class="placeholder-tag">[PLACEHOLDER: photo of Shah Software staff wearing headsets in the office]</div>
+        <div class="illus"><svg viewBox="0 0 400 260" role="img" aria-label="Support staff wearing headsets in the office">
+<circle cx="200" cy="120" r="108" fill="var(--illus-bg)"/>
+<rect x="46" y="188" width="150" height="10" rx="5" fill="var(--illus-2)" opacity=".35"/>
+<rect x="204" y="188" width="150" height="10" rx="5" fill="var(--illus-1)" opacity=".35"/>
+<rect x="86" y="120" width="70" height="80" rx="18" fill="var(--illus-2)"/>
+<circle cx="121" cy="98" r="30" fill="var(--illus-2)"/>
+<path d="M95 90a26 26 0 0 1 52 0" fill="none" stroke="var(--illus-line)" stroke-width="5" stroke-linecap="round"/>
+<circle cx="95" cy="98" r="6" fill="var(--illus-line)"/>
+<circle cx="147" cy="98" r="6" fill="var(--illus-line)"/>
+<path d="M147 103c5 3 7 10 3 15" fill="none" stroke="var(--illus-line)" stroke-width="4" stroke-linecap="round"/>
+<rect x="244" y="120" width="70" height="80" rx="18" fill="var(--illus-1)"/>
+<circle cx="279" cy="98" r="30" fill="var(--illus-1)"/>
+<path d="M253 90a26 26 0 0 1 52 0" fill="none" stroke="var(--illus-line)" stroke-width="5" stroke-linecap="round"/>
+<circle cx="253" cy="98" r="6" fill="var(--illus-line)"/>
+<circle cx="305" cy="98" r="6" fill="var(--illus-line)"/>
+<path d="M305 103c5 3 7 10 3 15" fill="none" stroke="var(--illus-line)" stroke-width="4" stroke-linecap="round"/>
+<path d="M180 70c8-10 20-16 20-16s12 6 20 16" fill="none" stroke="var(--illus-3)" stroke-width="4" stroke-linecap="round" opacity=".7"/>
+</svg></div>
       </div>
     </div>
   </section>
@@ -664,7 +732,21 @@ body:has(#privacy-policy:target) .nav-links a[href="#privacy-policy"]::after{
       <h1>Our solutions, their stories</h1>
       <p>Real feedback from the transit agencies and community action agencies we've worked with — some for over 20 years.</p>
       <div class="page-hero-media">
-        <div class="placeholder-tag">[PLACEHOLDER: photo of a smiling client alongside a 5-star rating graphic]</div>
+        <div class="illus"><svg viewBox="0 0 400 260" role="img" aria-label="A smiling client alongside a five star rating">
+<circle cx="200" cy="140" r="108" fill="var(--illus-bg)"/>
+<rect x="150" y="150" width="100" height="80" rx="30" fill="var(--illus-1)"/>
+<circle cx="200" cy="108" r="46" fill="var(--illus-1)"/>
+<circle cx="184" cy="102" r="6" fill="var(--illus-line)"/>
+<circle cx="216" cy="102" r="6" fill="var(--illus-line)"/>
+<path d="M178 120c8 12 36 12 44 0" stroke="var(--illus-line)" stroke-width="5" stroke-linecap="round" fill="none"/>
+<g fill="var(--illus-3)">
+<path d="M108 96l7 15 17 2-12 12 3 17-15-9-15 9 3-17-12-12 17-2z"/>
+<path d="M152 56l7 15 17 2-12 12 3 17-15-9-15 9 3-17-12-12 17-2z"/>
+<path d="M200 42l7 15 17 2-12 12 3 17-15-9-15 9 3-17-12-12 17-2z"/>
+<path d="M248 56l7 15 17 2-12 12 3 17-15-9-15 9 3-17-12-12 17-2z"/>
+<path d="M292 96l7 15 17 2-12 12 3 17-15-9-15 9 3-17-12-12 17-2z"/>
+</g>
+</svg></div>
       </div>
     </div>
   </section>
@@ -756,7 +838,27 @@ body:has(#privacy-policy:target) .nav-links a[href="#privacy-policy"]::after{
       <h1>A suite of products for your unique needs</h1>
       <p>Transportation Manager — a suite of products combined to create a comprehensive, web-based information system for transportation providers. Each agency selects the modules that best suit their needs. The system always includes functionality for client registration, trip reservations and scheduling, dispatching, trip billing, menu-driven built-in reports, easy ad hoc report creation, vehicle and driver tracking, vehicle maintenance and maintenance reminders, driver training and training reminders, and more.</p>
       <div class="page-hero-media">
-        <div class="placeholder-tag">[PLACEHOLDER: photo of a driver helping an elderly rider board an accessible transit bus]</div>
+        <div class="illus"><svg viewBox="0 0 400 260" role="img" aria-label="A driver helping a rider board an accessible bus">
+<circle cx="200" cy="130" r="112" fill="var(--illus-bg)"/>
+<rect x="238" y="208" width="130" height="10" rx="5" fill="var(--illus-line)" opacity=".3"/>
+<rect x="70" y="90" width="260" height="110" rx="22" fill="var(--illus-2)"/>
+<rect x="70" y="150" width="260" height="10" fill="var(--illus-line)" opacity=".25"/>
+<rect x="90" y="106" width="46" height="32" rx="6" fill="var(--illus-bg)"/>
+<rect x="146" y="106" width="46" height="32" rx="6" fill="var(--illus-bg)"/>
+<rect x="202" y="106" width="46" height="32" rx="6" fill="var(--illus-bg)"/>
+<rect x="258" y="106" width="46" height="32" rx="6" fill="var(--illus-bg)"/>
+<rect x="70" y="160" width="70" height="40" rx="8" fill="var(--illus-1)" opacity=".9"/>
+<path d="M70 200l70-40" stroke="var(--illus-3)" stroke-width="5" stroke-linecap="round"/>
+<circle cx="118" cy="212" r="18" fill="var(--illus-navy)"/>
+<circle cx="282" cy="212" r="18" fill="var(--illus-navy)"/>
+<circle cx="118" cy="212" r="7" fill="var(--illus-line)"/>
+<circle cx="282" cy="212" r="7" fill="var(--illus-line)"/>
+<circle cx="90" cy="176" r="14" fill="var(--illus-3)"/>
+<rect x="78" y="188" width="24" height="30" rx="10" fill="var(--illus-3)"/>
+<circle cx="56" cy="182" r="16" fill="var(--illus-1)"/>
+<rect x="44" y="196" width="24" height="34" rx="10" fill="var(--illus-1)"/>
+<path d="M68 200c8-4 14 0 18 8" stroke="var(--illus-line)" stroke-width="5" stroke-linecap="round" fill="none"/>
+</svg></div>
       </div>
     </div>
   </section>
@@ -840,7 +942,19 @@ body:has(#privacy-policy:target) .nav-links a[href="#privacy-policy"]::after{
         </div>
       </div>
       <div class="spotlight-media">
-        <div class="placeholder-tag">[PLACEHOLDER: photo of a transit driver using an in-vehicle tablet system]</div>
+        <div class="illus"><svg viewBox="0 0 400 260" role="img" aria-label="A transit driver using an in-vehicle tablet">
+<circle cx="200" cy="130" r="110" fill="var(--illus-bg)"/>
+<path d="M70 210c0-70 58-126 130-126s130 56 130 126" fill="none" stroke="var(--illus-2)" stroke-width="14" stroke-linecap="round" opacity=".55"/>
+<circle cx="132" cy="146" r="46" fill="none" stroke="var(--illus-1)" stroke-width="10"/>
+<circle cx="132" cy="146" r="6" fill="var(--illus-1)"/>
+<path d="M132 106v40M132 146l32 20M132 146l-34 12" stroke="var(--illus-1)" stroke-width="6" stroke-linecap="round"/>
+<circle cx="248" cy="110" r="30" fill="var(--illus-2)"/>
+<rect x="220" y="138" width="56" height="64" rx="16" fill="var(--illus-2)"/>
+<path d="M236 104c4 8 16 8 20 0" stroke="var(--illus-line)" stroke-width="4" stroke-linecap="round" fill="none"/>
+<rect x="256" y="168" width="52" height="38" rx="7" fill="var(--illus-3)"/>
+<rect x="263" y="176" width="38" height="4" rx="2" fill="var(--illus-navy)" opacity=".6"/>
+<rect x="263" y="184" width="26" height="4" rx="2" fill="var(--illus-navy)" opacity=".4"/>
+</svg></div>
       </div>
     </div>
   </section>
@@ -869,7 +983,17 @@ body:has(#privacy-policy:target) .nav-links a[href="#privacy-policy"]::after{
       <h1>Our solutions to better serve your clients</h1>
       <p>A fully web-based, comprehensive information system and management solution designed for use by Community Action Agencies and similar programs or organizations in the business of helping people.</p>
       <div class="page-hero-media">
-        <div class="placeholder-tag">[PLACEHOLDER: photo of a caregiver embracing a client]</div>
+        <div class="illus"><svg viewBox="0 0 400 260" role="img" aria-label="A caregiver embracing a client">
+<circle cx="200" cy="128" r="110" fill="var(--illus-bg)"/>
+<rect x="60" y="200" width="280" height="10" rx="5" fill="var(--illus-line)" opacity=".25"/>
+<rect x="128" y="120" width="80" height="92" rx="26" fill="var(--illus-2)" transform="rotate(-8 168 166)"/>
+<rect x="188" y="120" width="80" height="92" rx="26" fill="var(--illus-1)" transform="rotate(8 228 166)"/>
+<circle cx="176" cy="98" r="32" fill="var(--illus-2)"/>
+<circle cx="224" cy="98" r="32" fill="var(--illus-1)"/>
+<path d="M164 96c4 8 16 8 20 0" stroke="var(--illus-line)" stroke-width="4" stroke-linecap="round" fill="none"/>
+<path d="M212 96c4 8 16 8 20 0" stroke="var(--illus-line)" stroke-width="4" stroke-linecap="round" fill="none"/>
+<path d="M200 62c-10-14-34-14-34 6 0 16 34 34 34 34s34-18 34-34c0-20-24-20-34-6z" fill="var(--illus-3)"/>
+</svg></div>
       </div>
     </div>
   </section>
@@ -1080,7 +1204,7 @@ body:has(#privacy-policy:target) .nav-links a[href="#privacy-policy"]::after{
 
     <div class="wrap">
       <div class="map-embed">
-        <div class="placeholder-tag">[PLACEHOLDER: embed interactive Google Map for 13601 Preston Rd, Suite E450, Dallas, TX 75240]</div>
+        <iframe src="https://www.google.com/maps?q=13601+Preston+Rd+Suite+E450+Dallas+TX+75240&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Shah Software location map"></iframe>
       </div>
     </div>
   </section>
@@ -1248,7 +1372,23 @@ body:has(#privacy-policy:target) .nav-links a[href="#privacy-policy"]::after{
       </div>
 
       <div class="hero-media">
-        <div class="placeholder-tag">[PLACEHOLDER: photo of a customer support representative on the phone in a bright office]</div>
+        <div class="illus"><svg viewBox="0 0 400 260" role="img" aria-label="Customer support representative on a call">
+<circle cx="200" cy="122" r="108" fill="var(--illus-bg)"/>
+<rect x="60" y="196" width="280" height="12" rx="6" fill="var(--illus-2)" opacity=".35"/>
+<rect x="86" y="150" width="110" height="52" rx="8" fill="var(--illus-2)" opacity=".55"/>
+<rect x="92" y="156" width="98" height="34" rx="4" fill="var(--illus-line)"/>
+<rect x="100" y="162" width="82" height="4" rx="2" fill="var(--illus-3)" opacity=".7"/>
+<rect x="100" y="171" width="60" height="4" rx="2" fill="var(--illus-3)" opacity=".45"/>
+<rect x="170" y="112" width="76" height="88" rx="20" fill="var(--illus-1)"/>
+<circle cx="208" cy="88" r="34" fill="var(--illus-1)"/>
+<path d="M178 78a30 30 0 0 1 60 0" fill="none" stroke="var(--illus-line)" stroke-width="6" stroke-linecap="round"/>
+<circle cx="178" cy="86" r="7" fill="var(--illus-line)"/>
+<circle cx="238" cy="86" r="7" fill="var(--illus-line)"/>
+<path d="M238 92c6 4 8 12 4 18" fill="none" stroke="var(--illus-line)" stroke-width="5" stroke-linecap="round"/>
+<circle cx="244" cy="112" r="5" fill="var(--illus-line)"/>
+<path d="M256 70c14 4 24 16 24 30" fill="none" stroke="var(--illus-3)" stroke-width="4" stroke-linecap="round" opacity=".8"/>
+<path d="M266 58c22 4 38 24 38 48" fill="none" stroke="var(--illus-3)" stroke-width="4" stroke-linecap="round" opacity=".5"/>
+</svg></div>
       </div>
     </div>
   </section>
@@ -1265,7 +1405,27 @@ body:has(#privacy-policy:target) .nav-links a[href="#privacy-policy"]::after{
       <div class="grid-2">
         <div class="card">
           <div class="card-media">
-            <div class="placeholder-tag">[PLACEHOLDER: photo of a driver helping an elderly rider board an accessible bus]</div>
+            <div class="illus"><svg viewBox="0 0 400 260" role="img" aria-label="A driver helping a rider board an accessible bus">
+<circle cx="200" cy="130" r="112" fill="var(--illus-bg)"/>
+<rect x="238" y="208" width="130" height="10" rx="5" fill="var(--illus-line)" opacity=".3"/>
+<rect x="70" y="90" width="260" height="110" rx="22" fill="var(--illus-2)"/>
+<rect x="70" y="150" width="260" height="10" fill="var(--illus-line)" opacity=".25"/>
+<rect x="90" y="106" width="46" height="32" rx="6" fill="var(--illus-bg)"/>
+<rect x="146" y="106" width="46" height="32" rx="6" fill="var(--illus-bg)"/>
+<rect x="202" y="106" width="46" height="32" rx="6" fill="var(--illus-bg)"/>
+<rect x="258" y="106" width="46" height="32" rx="6" fill="var(--illus-bg)"/>
+<rect x="70" y="160" width="70" height="40" rx="8" fill="var(--illus-1)" opacity=".9"/>
+<path d="M70 200l70-40" stroke="var(--illus-3)" stroke-width="5" stroke-linecap="round"/>
+<circle cx="118" cy="212" r="18" fill="var(--illus-navy)"/>
+<circle cx="282" cy="212" r="18" fill="var(--illus-navy)"/>
+<circle cx="118" cy="212" r="7" fill="var(--illus-line)"/>
+<circle cx="282" cy="212" r="7" fill="var(--illus-line)"/>
+<circle cx="90" cy="176" r="14" fill="var(--illus-3)"/>
+<rect x="78" y="188" width="24" height="30" rx="10" fill="var(--illus-3)"/>
+<circle cx="56" cy="182" r="16" fill="var(--illus-1)"/>
+<rect x="44" y="196" width="24" height="34" rx="10" fill="var(--illus-1)"/>
+<path d="M68 200c8-4 14 0 18 8" stroke="var(--illus-line)" stroke-width="5" stroke-linecap="round" fill="none"/>
+</svg></div>
           </div>
           <h3>Transportation Management</h3>
           <p>A full suite for client registration, trip reservations and scheduling, dispatching, billing, vehicle and driver tracking, maintenance reminders, and more — built for transit providers of every size.</p>
@@ -1274,7 +1434,17 @@ body:has(#privacy-policy:target) .nav-links a[href="#privacy-policy"]::after{
 
         <div class="card">
           <div class="card-media">
-            <div class="placeholder-tag">[PLACEHOLDER: photo of a caregiver embracing a client]</div>
+            <div class="illus"><svg viewBox="0 0 400 260" role="img" aria-label="A caregiver embracing a client">
+<circle cx="200" cy="128" r="110" fill="var(--illus-bg)"/>
+<rect x="60" y="200" width="280" height="10" rx="5" fill="var(--illus-line)" opacity=".25"/>
+<rect x="128" y="120" width="80" height="92" rx="26" fill="var(--illus-2)" transform="rotate(-8 168 166)"/>
+<rect x="188" y="120" width="80" height="92" rx="26" fill="var(--illus-1)" transform="rotate(8 228 166)"/>
+<circle cx="176" cy="98" r="32" fill="var(--illus-2)"/>
+<circle cx="224" cy="98" r="32" fill="var(--illus-1)"/>
+<path d="M164 96c4 8 16 8 20 0" stroke="var(--illus-line)" stroke-width="4" stroke-linecap="round" fill="none"/>
+<path d="M212 96c4 8 16 8 20 0" stroke="var(--illus-line)" stroke-width="4" stroke-linecap="round" fill="none"/>
+<path d="M200 62c-10-14-34-14-34 6 0 16 34 34 34 34s34-18 34-34c0-20-24-20-34-6z" fill="var(--illus-3)"/>
+</svg></div>
           </div>
           <h3>Case Management</h3>
           <p>A fully web-based information system for Community Action Agencies to track clients, services, enrollment, and outcomes — from a client's very first service onward.</p>
@@ -1292,7 +1462,24 @@ body:has(#privacy-policy:target) .nav-links a[href="#privacy-policy"]::after{
   <section id="why" class="why">
     <div class="wrap why-grid">
       <div class="why-media">
-        <div class="placeholder-tag">[PLACEHOLDER: photo of Shah Software support staff wearing headsets in the office]</div>
+        <div class="illus"><svg viewBox="0 0 400 260" role="img" aria-label="Support staff wearing headsets in the office">
+<circle cx="200" cy="120" r="108" fill="var(--illus-bg)"/>
+<rect x="46" y="188" width="150" height="10" rx="5" fill="var(--illus-2)" opacity=".35"/>
+<rect x="204" y="188" width="150" height="10" rx="5" fill="var(--illus-1)" opacity=".35"/>
+<rect x="86" y="120" width="70" height="80" rx="18" fill="var(--illus-2)"/>
+<circle cx="121" cy="98" r="30" fill="var(--illus-2)"/>
+<path d="M95 90a26 26 0 0 1 52 0" fill="none" stroke="var(--illus-line)" stroke-width="5" stroke-linecap="round"/>
+<circle cx="95" cy="98" r="6" fill="var(--illus-line)"/>
+<circle cx="147" cy="98" r="6" fill="var(--illus-line)"/>
+<path d="M147 103c5 3 7 10 3 15" fill="none" stroke="var(--illus-line)" stroke-width="4" stroke-linecap="round"/>
+<rect x="244" y="120" width="70" height="80" rx="18" fill="var(--illus-1)"/>
+<circle cx="279" cy="98" r="30" fill="var(--illus-1)"/>
+<path d="M253 90a26 26 0 0 1 52 0" fill="none" stroke="var(--illus-line)" stroke-width="5" stroke-linecap="round"/>
+<circle cx="253" cy="98" r="6" fill="var(--illus-line)"/>
+<circle cx="305" cy="98" r="6" fill="var(--illus-line)"/>
+<path d="M305 103c5 3 7 10 3 15" fill="none" stroke="var(--illus-line)" stroke-width="4" stroke-linecap="round"/>
+<path d="M180 70c8-10 20-16 20-16s12 6 20 16" fill="none" stroke="var(--illus-3)" stroke-width="4" stroke-linecap="round" opacity=".7"/>
+</svg></div>
       </div>
 
       <div>
@@ -1482,7 +1669,7 @@ body:has(#privacy-policy:target) .nav-links a[href="#privacy-policy"]::after{
 
       <div class="footer-col">
         <h4>Location</h4>
-        <div class="footer-map"><div class="placeholder-tag">[PLACEHOLDER: embed Google Map]</div></div>
+        <div class="footer-map"><iframe src="https://www.google.com/maps?q=13601+Preston+Rd+Suite+E450+Dallas+TX+75240&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Shah Software location map"></iframe></div>
         <ul style="margin-top:12px;">
           <li><a href="https://www.google.com/maps/search/?api=1&query=13601+Preston+Rd+Suite+E450+Dallas+TX+75240" target="_blank" rel="noopener">Get Directions →</a></li>
         </ul>
