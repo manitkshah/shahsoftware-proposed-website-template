@@ -1,0 +1,1686 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shah Software | Customized Software Solutions Since 1994</title>
+<meta name="description" content="Shah Software builds custom transportation management and case management software for transit providers and community action agencies nationwide.">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 36 36'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%231d5bd6'/%3E%3Cstop offset='1' stop-color='%2317b3a3'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='36' height='36' rx='9' fill='url(%23g)'/%3E%3Ctext x='18' y='24' font-family='Arial,Helvetica,sans-serif' font-size='15' font-weight='800' fill='white' text-anchor='middle'%3ESS%3C/text%3E%3C/svg%3E">
+<link rel="canonical" href="https://www.shahsoftware.com/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Shah Software">
+<meta property="og:title" content="Shah Software | Customized Software Solutions Since 1994">
+<meta property="og:description" content="Shah Software builds custom transportation management and case management software for transit providers and community action agencies nationwide.">
+<meta property="og:url" content="https://www.shahsoftware.com/">
+<meta property="og:image" content="https://www.shahsoftware.com/[PLACEHOLDER-social-share-image.jpg]">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Shah Software | Customized Software Solutions Since 1994">
+<meta name="twitter:description" content="Shah Software builds custom transportation management and case management software for transit providers and community action agencies nationwide.">
+<style>
+/* ===========================================================
+   Shah Software — shared stylesheet
+   Plain HTML + CSS, no JS, no build step.
+   =========================================================== */
+
+:root{
+  --navy:#0f2540;
+  --navy-deep:#0a1a2e;
+  --blue:#1d5bd6;
+  --blue-light:#3f7ef0;
+  --teal:#17b3a3;
+  --gold:#e8a33d;
+  --ink:#101826;
+  --ink-soft:#4a5568;
+  --paper:#ffffff;
+  --paper-soft:#f4f7fb;
+  --line:#e3e9f2;
+  --radius-lg:20px;
+  --radius-md:14px;
+  --radius-sm:10px;
+  --shadow:0 10px 30px rgba(15,37,64,0.10);
+  --shadow-sm:0 4px 14px rgba(15,37,64,0.08);
+  --maxw:1160px;
+  --maxw-nav:1400px;
+
+  /* illustration palette (dark theme default: bright accents on navy) */
+  --illus-1:#7fe3d4;
+  --illus-2:#7fb2ff;
+  --illus-3:#e8a33d;
+  --illus-navy:#0a1a2e;
+  --illus-line:rgba(255,255,255,0.4);
+  --illus-bg:rgba(255,255,255,0.08);
+}
+
+*,*::before,*::after{box-sizing:border-box;}
+html{scroll-behavior:smooth;scrollbar-width:thin;scrollbar-color:var(--teal) var(--paper-soft);}
+:target{scroll-margin-top:100px;}
+body{
+  margin:0;
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  color:var(--ink);
+  background:var(--paper);
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block;}
+a{color:inherit;text-decoration:none;}
+ul{list-style:none;margin:0;padding:0;}
+h1,h2,h3,h4,p{margin:0;}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 20px;}
+section{padding:72px 0;}
+
+/* custom scrollbar (webkit) */
+::-webkit-scrollbar{width:10px;height:10px;}
+::-webkit-scrollbar-track{background:var(--paper-soft);}
+::-webkit-scrollbar-thumb{background:linear-gradient(var(--teal),var(--blue));border-radius:999px;}
+::-webkit-scrollbar-thumb:hover{background:linear-gradient(var(--blue),var(--teal));}
+::selection{background:rgba(23,179,163,0.3);}
+
+/* accessible, on-brand focus rings (kept for keyboard users; mouse clicks don't trigger it) */
+a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,.btn:focus-visible,label.burger:focus-visible{
+  outline:none;box-shadow:0 0 0 3px rgba(29,91,214,0.35);border-radius:8px;
+}
+
+.eyebrow{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  font-size:.78rem;
+  font-weight:700;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  color:var(--blue);
+  background:rgba(29,91,214,0.08);
+  padding:6px 14px;
+  border-radius:999px;
+  margin-bottom:14px;
+}
+.eyebrow::before{
+  content:"";width:6px;height:6px;border-radius:50%;background:var(--blue);flex-shrink:0;
+  animation:pulseDot 2.2s ease-in-out infinite;
+}
+.eyebrow.on-dark{background:rgba(255,255,255,0.1);color:#7fe3d4;}
+.eyebrow.on-dark::before{background:#7fe3d4;}
+@keyframes pulseDot{0%,100%{opacity:1;transform:scale(1);}50%{opacity:.45;transform:scale(1.5);}}
+@media (prefers-reduced-motion:reduce){.eyebrow::before{animation:none;}}
+
+.section-head{max-width:640px;margin:0 auto 44px;text-align:center;}
+.section-head.left{margin:0 0 36px;text-align:left;}
+.section-head h2{font-size:clamp(1.7rem,4vw,2.35rem);letter-spacing:-0.01em;}
+.section-head p{margin-top:12px;color:var(--ink-soft);font-size:1.05rem;}
+
+/* ===== Buttons ===== */
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  padding:14px 26px;
+  border-radius:999px;
+  font-weight:700;
+  font-size:1rem;
+  border:2px solid transparent;
+  cursor:pointer;
+  transition:transform .18s cubic-bezier(.34,1.56,.64,1), box-shadow .2s ease, background .2s ease, color .2s ease, border-color .2s ease;
+}
+.btn:active{transform:translateY(1px) scale(.97);}
+.btn-primary{
+  background:linear-gradient(135deg,var(--teal),var(--blue-light));
+  color:#fff;
+  box-shadow:0 10px 24px rgba(29,91,214,0.28);
+}
+.btn-primary:hover{box-shadow:0 16px 34px rgba(29,91,214,0.4);transform:translateY(-2px);}
+.btn-ghost{background:transparent;border-color:rgba(255,255,255,0.5);color:#fff;}
+.btn-ghost:hover{background:rgba(255,255,255,0.12);border-color:#fff;transform:translateY(-2px);}
+.btn-outline{background:transparent;border-color:var(--line);color:var(--navy);}
+.btn-outline:hover{border-color:var(--blue);color:var(--blue);transform:translateY(-2px);box-shadow:var(--shadow-sm);}
+.btn-sm{padding:10px 20px;font-size:.9rem;}
+
+/* ===== Top info bar ===== */
+.topbar{
+  background:var(--navy-deep);
+  color:rgba(255,255,255,0.85);
+  font-size:.82rem;
+}
+.topbar .wrap{
+  display:flex;
+  flex-wrap:wrap;
+  gap:6px 22px;
+  align-items:center;
+  padding-top:9px;
+  padding-bottom:9px;
+}
+.topbar a{display:inline-flex;align-items:center;gap:6px;font-weight:600;transition:color .18s ease;}
+.topbar a:hover{color:#7fe3d4;}
+.topbar svg{width:14px;height:14px;flex-shrink:0;}
+.topbar .addr{display:inline-flex;align-items:center;gap:6px;color:rgba(255,255,255,0.7);}
+
+/* ===== Header / nav ===== */
+header{
+  position:sticky;
+  top:0;
+  z-index:50;
+  background:rgba(255,255,255,0.92);
+  backdrop-filter:saturate(180%) blur(10px);
+  border-bottom:1px solid var(--line);
+}
+.nav{
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  justify-content:flex-start;
+  gap:10px 16px;
+  padding:14px 20px;
+  max-width:var(--maxw-nav);
+  margin:0 auto;
+}
+.logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:1.1rem;color:var(--navy);order:1;flex-shrink:0;}
+.logo-mark{
+  width:36px;height:36px;border-radius:10px;
+  background:linear-gradient(135deg,var(--blue),var(--teal));
+  display:flex;align-items:center;justify-content:center;
+  color:#fff;font-weight:800;font-size:1rem;flex-shrink:0;
+  transition:transform .3s ease;
+}
+.logo:hover .logo-mark{transform:rotate(-8deg) scale(1.06);}
+.icon{width:18px;height:18px;flex-shrink:0;}
+
+.nav-toggle{display:none;}
+.burger{
+  order:4;
+  flex-shrink:0;
+  display:flex;align-items:center;justify-content:center;
+  width:40px;height:40px;border-radius:10px;
+  border:1px solid var(--line);background:#fff;cursor:pointer;
+  transition:border-color .18s ease, background .18s ease;
+}
+.burger:hover{border-color:var(--blue);background:var(--paper-soft);}
+.nav-links{
+  order:5;
+  flex-basis:100%;
+  max-height:0;
+  overflow:hidden;
+  transition:max-height .3s ease;
+  display:flex;flex-direction:column;
+  width:100%;
+  font-weight:600;font-size:.98rem;color:var(--navy);
+}
+.nav-toggle:checked ~ .nav-links{max-height:520px;margin-top:14px;}
+.nav-links li{border-top:1px solid var(--line);}
+.nav-links a{display:block;padding:13px 4px;opacity:.85;position:relative;transition:opacity .18s ease,color .18s ease;}
+.nav-links a:hover,.nav-links a.active{opacity:1;color:var(--blue);}
+.nav-cta{
+  order:3;
+  flex-shrink:0;
+  display:inline-flex;
+  padding:10px 18px;
+  font-size:.88rem;
+  margin-left:auto;
+}
+
+@media(min-width:1240px){
+  .burger,.nav-toggle{display:none;}
+  .nav-links{
+    order:2;flex-basis:auto;max-height:none;overflow:visible;
+    flex-direction:row;width:auto;gap:22px;font-size:.92rem;
+  }
+  .nav-links li{border-top:none;}
+  .nav-links a{padding:4px 0;}
+  .nav-links a::after{
+    content:"";position:absolute;left:0;right:100%;bottom:-2px;height:2px;border-radius:2px;
+    background:linear-gradient(90deg,var(--teal),var(--blue));
+    transition:right .25s ease;
+  }
+  .nav-links a:hover::after,.nav-links a.active::after{right:0;}
+  .nav-cta{order:3;padding:12px 24px;font-size:.95rem;}
+}
+
+/* ===== Hero (home, large) ===== */
+.hero{
+  position:relative;
+  background:radial-gradient(1200px 600px at 15% -10%, #163a68 0%, var(--navy) 45%, var(--navy-deep) 100%);
+  color:#fff;
+  overflow:hidden;
+  padding:76px 0 90px;
+}
+.hero::before{
+  content:"";position:absolute;inset:0;
+  background:radial-gradient(460px 320px at 8% 85%, rgba(63,126,240,0.28), transparent 65%);
+  pointer-events:none;
+  animation:auroraDriftAlt 18s ease-in-out infinite;
+}
+.hero::after{
+  content:"";position:absolute;inset:0;
+  background:
+    radial-gradient(500px 260px at 92% 12%, rgba(23,179,163,0.35), transparent 60%),
+    radial-gradient(420px 300px at 100% 95%, rgba(232,163,61,0.18), transparent 60%);
+  pointer-events:none;
+  animation:auroraDrift 14s ease-in-out infinite;
+}
+@keyframes auroraDrift{
+  0%,100%{transform:translate(0,0) scale(1);}
+  50%{transform:translate(-26px,18px) scale(1.07);}
+}
+@keyframes auroraDriftAlt{
+  0%,100%{transform:translate(0,0) scale(1);}
+  50%{transform:translate(20px,-16px) scale(1.05);}
+}
+@media (prefers-reduced-motion:reduce){.hero::before,.hero::after{animation:none;}}
+.hero-grid{position:relative;display:grid;gap:44px;align-items:center;}
+@media(min-width:960px){.hero-grid{grid-template-columns:1.05fr .95fr;gap:56px;}}
+@keyframes fadeSlideUp{from{opacity:0;transform:translateY(18px);}to{opacity:1;transform:translateY(0);}}
+.hero-grid > *{animation:fadeSlideUp .7s cubic-bezier(.16,1,.3,1) both;}
+.hero-grid > *:nth-child(2){animation-delay:.12s;}
+@media (prefers-reduced-motion:reduce){.hero-grid > *{animation:none;}}
+.hero-badge{
+  display:inline-flex;align-items:center;gap:8px;
+  background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.16);
+  padding:7px 14px;border-radius:999px;font-size:.82rem;font-weight:600;margin-bottom:20px;
+}
+.hero h1{font-size:clamp(2.1rem,5.4vw,3.4rem);line-height:1.12;letter-spacing:-0.02em;font-weight:800;}
+.hero h1 span{
+  background:linear-gradient(135deg,#5fe0cf,#7fb2ff);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.hero p.lead{margin-top:18px;font-size:1.12rem;color:rgba(255,255,255,0.82);max-width:52ch;}
+.hero-actions{display:flex;flex-wrap:wrap;gap:14px;margin-top:32px;}
+.hero-trust{display:flex;flex-wrap:wrap;gap:22px;margin-top:40px;padding-top:28px;border-top:1px solid rgba(255,255,255,0.14);}
+.hero-trust div{font-size:.85rem;color:rgba(255,255,255,0.7);transition:transform .2s ease;cursor:default;}
+.hero-trust div:hover{transform:translateY(-3px);}
+.hero-trust strong{display:block;font-size:1.35rem;color:#fff;font-weight:800;transition:color .2s ease;}
+.hero-trust div:hover strong{color:#7fe3d4;}
+.hero-media{
+  position:relative;border-radius:var(--radius-lg);overflow:hidden;
+  background:linear-gradient(160deg,#1c3f6e,#0d2542);
+  border:1px solid rgba(255,255,255,0.14);min-height:320px;
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 30px 60px rgba(0,0,0,0.35);
+  transition:transform .4s cubic-bezier(.16,1,.3,1);
+}
+.hero-media:hover{transform:translateY(-4px);}
+.placeholder-tag{
+  color:rgba(255,255,255,0.65);font-size:.85rem;font-weight:700;letter-spacing:.03em;
+  text-align:center;padding:20px;border:2px dashed rgba(255,255,255,0.28);
+  border-radius:var(--radius-md);margin:20px;
+}
+
+/* ===== Page hero (inner pages, compact) ===== */
+.page-hero{
+  position:relative;
+  background:radial-gradient(1000px 500px at 10% -20%, #163a68 0%, var(--navy) 45%, var(--navy-deep) 100%);
+  color:#fff;padding:56px 0 64px;overflow:hidden;
+}
+.page-hero::after{
+  content:"";position:absolute;inset:0;
+  background:radial-gradient(480px 240px at 95% 10%, rgba(23,179,163,0.32), transparent 60%);
+  pointer-events:none;
+  animation:auroraDrift 16s ease-in-out infinite;
+}
+@media (prefers-reduced-motion:reduce){.page-hero::after{animation:none;}}
+.page-hero .wrap{position:relative;}
+.page-hero .wrap > *{animation:fadeSlideUp .6s cubic-bezier(.16,1,.3,1) both;}
+@media (prefers-reduced-motion:reduce){.page-hero .wrap > *{animation:none;}}
+.page-hero h1{font-size:clamp(1.9rem,4.6vw,2.7rem);letter-spacing:-0.01em;font-weight:800;}
+.page-hero p{margin-top:14px;color:rgba(255,255,255,0.8);font-size:1.05rem;max-width:60ch;}
+.page-hero-media{
+  margin-top:32px;border-radius:var(--radius-lg);overflow:hidden;
+  background:linear-gradient(160deg,#1c3f6e,#0d2542);
+  border:1px solid rgba(255,255,255,0.14);min-height:200px;
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 20px 40px rgba(0,0,0,0.3);
+}
+
+/* ===== Logos / trusted strip ===== */
+.strip{background:var(--paper-soft);border-bottom:1px solid var(--line);padding:26px 0;}
+.strip .wrap{display:flex;flex-wrap:wrap;gap:14px 34px;align-items:center;justify-content:center;color:var(--ink-soft);font-size:.85rem;font-weight:600;text-align:center;}
+
+/* ===== Grids / cards ===== */
+.grid-3{display:grid;gap:22px;grid-template-columns:1fr;}
+@media(min-width:680px){.grid-3{grid-template-columns:repeat(2,1fr);}}
+@media(min-width:980px){.grid-3{grid-template-columns:repeat(3,1fr);}}
+.grid-2{display:grid;gap:22px;grid-template-columns:1fr;}
+@media(min-width:680px){.grid-2{grid-template-columns:repeat(2,1fr);}}
+
+.card{
+  background:#fff;border:1px solid var(--line);border-radius:var(--radius-md);
+  padding:28px 24px;box-shadow:var(--shadow-sm);
+  transition:transform .3s cubic-bezier(.16,1,.3,1), box-shadow .3s ease, border-color .3s ease;
+}
+.card:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(29,91,214,0.16);border-color:rgba(23,179,163,0.45);}
+.card-icon{
+  width:48px;height:48px;border-radius:12px;
+  display:flex;align-items:center;justify-content:center;
+  background:linear-gradient(135deg,rgba(29,91,214,0.12),rgba(23,179,163,0.14));
+  color:var(--blue);margin-bottom:18px;
+  transition:transform .3s cubic-bezier(.34,1.56,.64,1);
+}
+.card:hover .card-icon,.why-item:hover .card-icon{transform:scale(1.1) rotate(-4deg);}
+.card h3{font-size:1.15rem;margin-bottom:8px;letter-spacing:-0.01em;}
+.card p{color:var(--ink-soft);font-size:.97rem;}
+.card .card-media{
+  margin:-28px -24px 20px;border-radius:var(--radius-md) var(--radius-md) 0 0;
+  overflow:hidden;aspect-ratio:16/10;
+  background:linear-gradient(160deg,#eaf1fc,#f7fbfa);
+  display:flex;align-items:center;justify-content:center;
+}
+.card .card-media .placeholder-tag{color:var(--ink-soft);border-color:#c7d6ec;font-size:.75rem;margin:14px;}
+.card a.card-link{display:inline-flex;align-items:center;gap:6px;margin-top:14px;font-weight:700;color:var(--blue);font-size:.92rem;transition:color .18s ease,transform .18s ease;}
+.card a.card-link:hover{color:var(--teal);transform:translateX(4px);}
+
+/* ===== Why choose us ===== */
+.why{background:var(--paper-soft);}
+.why-grid{display:grid;gap:36px;align-items:center;}
+@media(min-width:940px){.why-grid{grid-template-columns:.9fr 1.1fr;}}
+.why-media{
+  border-radius:var(--radius-lg);background:linear-gradient(160deg,#eaf1fc,#f7fbfa);
+  border:1px solid var(--line);min-height:280px;display:flex;align-items:center;justify-content:center;
+}
+.why-media .placeholder-tag{color:var(--ink-soft);border-color:#c7d6ec;}
+.why-list{display:grid;gap:20px;}
+.why-item{
+  display:flex;gap:16px;align-items:flex-start;background:#fff;border:1px solid var(--line);
+  border-radius:var(--radius-md);padding:18px 20px;box-shadow:var(--shadow-sm);
+  transition:transform .3s cubic-bezier(.16,1,.3,1), box-shadow .3s ease, border-color .3s ease;
+}
+.why-item:hover{transform:translateX(6px);box-shadow:0 14px 30px rgba(29,91,214,0.14);border-color:rgba(23,179,163,0.4);}
+.why-item .num{
+  flex-shrink:0;width:38px;height:38px;border-radius:10px;background:var(--navy);color:#fff;
+  font-weight:800;display:flex;align-items:center;justify-content:center;font-size:.95rem;
+  transition:background .3s ease,transform .3s cubic-bezier(.34,1.56,.64,1);
+}
+.why-item:hover .num{background:linear-gradient(135deg,var(--teal),var(--blue));transform:scale(1.08);}
+.why-item h3{font-size:1.05rem;margin-bottom:4px;}
+.why-item p{color:var(--ink-soft);font-size:.95rem;}
+
+/* ===== Reviews / testimonials ===== */
+.reviews-grid{display:grid;gap:22px;grid-template-columns:1fr;}
+@media(min-width:760px){.reviews-grid{grid-template-columns:repeat(3,1fr);}}
+.review-card{
+  background:#fff;border:1px solid var(--line);border-radius:var(--radius-md);
+  padding:26px 24px;box-shadow:var(--shadow-sm);display:flex;flex-direction:column;gap:14px;
+  transition:transform .3s cubic-bezier(.16,1,.3,1), box-shadow .3s ease, border-color .3s ease;
+}
+.review-card:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(232,163,61,0.18);border-color:rgba(232,163,61,0.5);}
+.stars{color:var(--gold);font-size:1.05rem;letter-spacing:2px;}
+.review-card p.quote{color:var(--ink-soft);font-size:.94rem;flex-grow:1;}
+.reviewer{display:flex;align-items:center;gap:12px;}
+.avatar{
+  width:42px;height:42px;border-radius:50%;
+  background:linear-gradient(135deg,var(--blue-light),var(--teal));
+  color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.85rem;flex-shrink:0;
+}
+.reviewer .name{font-weight:700;font-size:.92rem;}
+.reviewer .role{color:var(--ink-soft);font-size:.8rem;}
+
+.testimonial-full{
+  display:grid;gap:24px;
+}
+.testimonial-full .review-card{padding:30px;}
+.testimonial-full p.quote{font-size:1rem;color:var(--ink-soft);}
+.rating-summary{
+  display:flex;align-items:center;gap:14px;flex-wrap:wrap;
+  background:#fff;border:1px solid var(--line);border-radius:var(--radius-md);
+  padding:18px 22px;box-shadow:var(--shadow-sm);margin-bottom:36px;
+}
+.rating-summary .stars{font-size:1.3rem;}
+.rating-summary strong{font-size:1.1rem;}
+.rating-summary span{color:var(--ink-soft);font-size:.92rem;}
+
+/* ===== Feature grid (Transportation / Case Management) ===== */
+.feature-grid{display:grid;gap:24px;grid-template-columns:1fr;}
+@media(min-width:680px){.feature-grid{grid-template-columns:repeat(2,1fr);}}
+@media(min-width:980px){.feature-grid.cols-3{grid-template-columns:repeat(3,1fr);}}
+.feature-card{display:flex;gap:16px;align-items:flex-start;padding:6px 0;transition:transform .25s ease;}
+.feature-card:hover{transform:translateX(4px);}
+.feature-card .card-icon{margin-bottom:0;}
+.feature-card h3{font-size:1.03rem;margin-bottom:6px;}
+.feature-card p{color:var(--ink-soft);font-size:.93rem;}
+
+.intro-copy{max-width:760px;margin:0 auto 48px;text-align:center;color:var(--ink-soft);font-size:1.05rem;}
+
+/* ===== Spotlight / article banner ===== */
+.spotlight{background:var(--paper-soft);}
+.spotlight-grid{display:grid;gap:32px;align-items:center;}
+@media(min-width:860px){.spotlight-grid{grid-template-columns:1.1fr .9fr;}}
+.spotlight-tag{
+  display:inline-block;background:var(--gold);color:#fff;font-weight:800;font-size:.78rem;
+  letter-spacing:.05em;text-transform:uppercase;padding:7px 14px;border-radius:6px;margin-bottom:16px;
+}
+.spotlight h3{font-size:clamp(1.4rem,3vw,1.9rem);letter-spacing:-0.01em;margin-bottom:14px;}
+.spotlight p{color:var(--ink-soft);}
+.spotlight-media{
+  border-radius:var(--radius-lg);overflow:hidden;background:linear-gradient(160deg,#e4ecf9,#eef6f4);
+  border:1px solid var(--line);min-height:220px;display:flex;align-items:center;justify-content:center;
+  transition:transform .4s cubic-bezier(.16,1,.3,1);
+}
+.spotlight-media:hover{transform:translateY(-4px);}
+.spotlight-media .placeholder-tag{color:var(--ink-soft);border-color:#c7d6ec;}
+
+/* ===== Contact ===== */
+.contact-hero-strip{background:linear-gradient(160deg,var(--navy-deep),var(--navy));color:#fff;}
+.contact-grid{display:grid;gap:22px;grid-template-columns:1fr;}
+@media(min-width:760px){.contact-grid{grid-template-columns:repeat(2,1fr);}}
+@media(min-width:1040px){.contact-grid{grid-template-columns:repeat(4,1fr);}}
+.contact-card{
+  background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.14);
+  border-radius:var(--radius-md);padding:26px 22px;text-align:left;
+  transition:transform .3s cubic-bezier(.16,1,.3,1), background .3s ease, border-color .3s ease;
+}
+.contact-card:hover{transform:translateY(-6px);background:rgba(255,255,255,0.1);border-color:rgba(127,227,212,0.5);}
+.contact-card .card-icon{background:rgba(255,255,255,0.1);color:#7fe3d4;}
+.contact-card h3{font-size:1.02rem;margin-bottom:8px;}
+.contact-card p{color:rgba(255,255,255,0.72);font-size:.92rem;}
+.contact-card a.link{display:inline-flex;align-items:center;gap:6px;margin-top:12px;font-weight:700;color:#7fe3d4;font-size:.92rem;transition:color .18s ease,transform .18s ease;}
+.contact-card a.link:hover{color:#fff;transform:translateX(4px);}
+.call-banner{
+  margin-top:44px;display:flex;flex-wrap:wrap;gap:20px;align-items:center;justify-content:space-between;
+  background:linear-gradient(135deg,rgba(23,179,163,0.16),rgba(29,91,214,0.16));
+  border:1px solid rgba(255,255,255,0.16);border-radius:var(--radius-lg);padding:28px 30px;
+  transition:transform .3s ease,box-shadow .3s ease;
+}
+.call-banner:hover{transform:translateY(-3px);box-shadow:0 20px 44px rgba(29,91,214,0.14);}
+.call-banner h3{font-size:1.25rem;margin-bottom:6px;}
+.call-banner p{color:rgba(255,255,255,0.72);font-size:.95rem;}
+
+/* ===== Contact page: info + form ===== */
+.contact-layout{display:grid;gap:44px;grid-template-columns:1fr;}
+@media(min-width:900px){.contact-layout{grid-template-columns:.85fr 1.15fr;}}
+.info-block h2{font-size:1.4rem;margin-bottom:20px;}
+.info-list{display:grid;gap:18px;}
+.info-list li{display:flex;gap:14px;align-items:flex-start;}
+.info-list .card-icon{background:rgba(29,91,214,0.1);}
+.info-list strong{display:block;font-size:.98rem;}
+.info-list a,.info-list span.value{color:var(--ink-soft);font-size:.95rem;}
+.info-list a{transition:color .18s ease;}
+.info-list a:hover{color:var(--blue);}
+.hours-note{margin-top:22px;padding:16px 18px;background:var(--paper-soft);border:1px dashed var(--line);border-radius:var(--radius-sm);color:var(--ink-soft);font-size:.88rem;}
+
+.form-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius-lg);padding:32px;box-shadow:var(--shadow-sm);}
+.form-card h2{font-size:1.4rem;margin-bottom:6px;}
+.form-card > p{color:var(--ink-soft);font-size:.94rem;margin-bottom:24px;}
+.form-row{display:grid;gap:16px;grid-template-columns:1fr;margin-bottom:16px;}
+@media(min-width:560px){.form-row.two{grid-template-columns:1fr 1fr;}}
+label{display:block;font-size:.85rem;font-weight:700;color:var(--navy);margin-bottom:6px;}
+input[type=text],input[type=email],input[type=tel],textarea{
+  width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:var(--radius-sm);
+  font:inherit;color:var(--ink);background:var(--paper-soft);
+  transition:border-color .18s ease, background .18s ease, box-shadow .18s ease;
+}
+input:focus,textarea:focus{outline:none;border-color:var(--blue-light);background:#fff;box-shadow:0 0 0 3px rgba(29,91,214,0.14);}
+textarea{resize:vertical;min-height:110px;}
+.checkbox-group{display:grid;gap:10px;grid-template-columns:1fr;margin-top:6px;}
+@media(min-width:560px){.checkbox-group{grid-template-columns:1fr 1fr;}}
+.checkbox-group label{
+  display:flex;align-items:center;gap:8px;font-weight:600;font-size:.9rem;color:var(--ink);margin-bottom:0;
+}
+.checkbox-group input{width:16px;height:16px;accent-color:var(--blue);}
+.form-note{margin-top:18px;font-size:.82rem;color:var(--ink-soft);background:var(--paper-soft);border:1px dashed var(--line);border-radius:var(--radius-sm);padding:12px 14px;}
+
+.map-embed{
+  border-radius:var(--radius-lg);overflow:hidden;border:1px solid var(--line);
+  background:var(--paper-soft);min-height:280px;display:flex;align-items:center;justify-content:center;
+  margin-top:56px;
+}
+.map-embed .placeholder-tag{color:var(--ink-soft);border-color:#c7d6ec;}
+
+/* ===== Prose (privacy policy) ===== */
+.prose{max-width:820px;margin:0 auto;}
+.prose h2{font-size:1.3rem;margin:38px 0 12px;letter-spacing:-0.01em;}
+.prose h2:first-child{margin-top:0;}
+.prose h3{font-size:1.05rem;margin:22px 0 8px;}
+.prose p{color:var(--ink-soft);margin-bottom:14px;font-size:.98rem;}
+.prose ul{list-style:disc;padding-left:22px;margin-bottom:14px;}
+.prose li{color:var(--ink-soft);font-size:.98rem;margin-bottom:6px;}
+.prose .meta{color:var(--ink-soft);font-size:.9rem;margin-bottom:30px;}
+.prose a{color:var(--blue);text-decoration:underline;}
+
+/* ===== Footer ===== */
+footer{background:var(--navy-deep);color:rgba(255,255,255,0.7);padding:56px 0 26px;font-size:.92rem;}
+.footer-grid{display:grid;gap:32px;grid-template-columns:1fr;padding-bottom:36px;border-bottom:1px solid rgba(255,255,255,0.12);}
+@media(min-width:760px){.footer-grid{grid-template-columns:1.4fr 1fr 1fr 1fr;}}
+.footer-brand .logo{color:#fff;margin-bottom:14px;}
+.footer-brand p{color:rgba(255,255,255,0.6);font-size:.9rem;max-width:36ch;}
+.footer-col h4{color:#fff;font-size:.85rem;text-transform:uppercase;letter-spacing:.06em;margin-bottom:16px;}
+.footer-col ul{display:grid;gap:10px;}
+.footer-col a{transition:color .18s ease, transform .18s ease;display:inline-block;}
+.footer-col a:hover{color:#fff;transform:translateX(3px);}
+.footer-col li.plain{color:rgba(255,255,255,0.6);}
+.footer-map{
+  border-radius:var(--radius-sm);overflow:hidden;border:1px solid rgba(255,255,255,0.14);
+  min-height:120px;background:rgba(255,255,255,0.05);display:flex;align-items:center;justify-content:center;
+}
+.footer-map .placeholder-tag{margin:10px;padding:12px;font-size:.72rem;}
+.footer-bottom{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between;padding-top:22px;font-size:.85rem;color:rgba(255,255,255,0.5);}
+
+
+/* ===== Illustrations (replace image placeholders; theme via CSS vars) ===== */
+.illus{width:100%;height:100%;display:flex;align-items:center;justify-content:center;padding:20px;}
+.illus svg{width:82%;max-width:340px;height:auto;filter:drop-shadow(0 12px 20px rgba(0,0,0,0.18));animation:illusFloat 5s ease-in-out infinite;}
+@media (prefers-reduced-motion:reduce){.illus svg{animation:none;}}
+@keyframes illusFloat{0%,100%{transform:translateY(0);}50%{transform:translateY(-10px);}}
+.card .card-media .illus{padding:0;}
+.card .card-media .illus svg{max-width:220px;}
+
+/* ===== Live map embeds ===== */
+.map-embed iframe,.footer-map iframe{width:100%;height:100%;min-height:inherit;border:0;display:block;}
+.map-embed{padding:0;}
+.footer-map{padding:0;}
+
+/* ===== Extra interactive polish (bells & whistles) ===== */
+.btn{position:relative;overflow:hidden;}
+.btn::before{
+  content:"";position:absolute;top:0;left:-60%;width:40%;height:100%;
+  background:linear-gradient(120deg,transparent,rgba(255,255,255,0.45),transparent);
+  transform:skewX(-20deg);transition:left .6s ease;pointer-events:none;
+}
+.btn:hover::before{left:120%;}
+
+.hero h1 span{
+  background-size:200% auto;
+  animation:shimmerText 5s linear infinite;
+}
+@keyframes shimmerText{0%{background-position:0% 50%;}100%{background-position:200% 50%;}}
+@media (prefers-reduced-motion:reduce){.hero h1 span{animation:none;}}
+
+.testimonial-full .review-card,.reviews-grid .review-card{transform-style:preserve-3d;perspective:800px;}
+.testimonial-full .review-card:hover,.reviews-grid .review-card:hover{transform:translateY(-6px) rotateX(2deg) rotateY(-2deg);}
+
+.logo-mark{position:relative;}
+.logo-mark::after{
+  content:"";position:absolute;inset:-4px;border-radius:14px;border:2px solid var(--teal);
+  opacity:0;transform:scale(.85);transition:opacity .3s ease, transform .3s ease;pointer-events:none;
+}
+.logo:hover .logo-mark::after{opacity:.6;transform:scale(1);}
+
+/* ===========================================================
+   Single-file page switching (no JS): each "page" is shown/hidden
+   via the URL fragment (:target). #home is the default view.
+   =========================================================== */
+main.pages{display:flex;flex-direction:column;}
+.page{display:none;}
+.page:target{display:block;}
+#home{display:block;order:-1;}
+:target ~ #home{display:none;}
+
+body:has(#our-company:target) .nav-links a[href="#our-company"],
+body:has(#our-clients:target) .nav-links a[href="#our-clients"],
+body:has(#transportation-management:target) .nav-links a[href="#transportation-management"],
+body:has(#case-management:target) .nav-links a[href="#case-management"],
+body:has(#contact:target) .nav-links a[href="#contact"],
+body:has(#privacy-policy:target) .nav-links a[href="#privacy-policy"]{
+  opacity:1;color:var(--blue);
+}
+body:has(#our-company:target) .nav-links a[href="#our-company"]::after,
+body:has(#our-clients:target) .nav-links a[href="#our-clients"]::after,
+body:has(#transportation-management:target) .nav-links a[href="#transportation-management"]::after,
+body:has(#case-management:target) .nav-links a[href="#case-management"]::after,
+body:has(#contact:target) .nav-links a[href="#contact"]::after,
+body:has(#privacy-policy:target) .nav-links a[href="#privacy-policy"]::after{
+  right:0;
+}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="wrap">
+    <a href="tel:+18009682748">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      1-800-968-2748
+    </a>
+    <a href="mailto:info@shahsoftware.com">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+      info@shahsoftware.com
+    </a>
+    <span class="addr">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+      13601 Preston Rd, Suite E450, Dallas, TX 75240
+    </span>
+  </div>
+</div>
+
+<header>
+  <nav class="nav">
+    <a href="#home" class="logo">
+      <span class="logo-mark">SS</span>
+      Shah Software
+    </a>
+
+    <input type="checkbox" id="nav-toggle" class="nav-toggle">
+
+    <ul class="nav-links">
+      <li><a href="#our-company">Our Company</a></li>
+      <li><a href="#our-clients">Our Clients</a></li>
+      <li><a href="#transportation-management">Transportation Management</a></li>
+      <li><a href="#case-management">Case Management</a></li>
+      <li><a href="#contact">Contact Us</a></li>
+      <li><a href="#privacy-policy">Privacy Policy</a></li>
+    </ul>
+
+    <a href="#contact" class="btn btn-primary nav-cta">Get Quote</a>
+
+    <label for="nav-toggle" class="burger" aria-label="Menu">
+      <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </label>
+  </nav>
+</header>
+
+<main class="pages">
+<div id="our-company" class="page">
+
+
+  <section class="page-hero">
+    <div class="wrap">
+      <span class="eyebrow on-dark">Our Company</span>
+      <h1>Providing customized software solutions since 1994</h1>
+      <p>From a small start-up in rural Texas to a nationwide leader — see how Shah Software got here.</p>
+      <div class="page-hero-media">
+        <div class="illus"><svg viewBox="0 0 400 260" role="img" aria-label="Support staff wearing headsets in the office">
+<circle cx="200" cy="120" r="108" fill="var(--illus-bg)"/>
+<rect x="46" y="188" width="150" height="10" rx="5" fill="var(--illus-2)" opacity=".35"/>
+<rect x="204" y="188" width="150" height="10" rx="5" fill="var(--illus-1)" opacity=".35"/>
+<rect x="86" y="120" width="70" height="80" rx="18" fill="var(--illus-2)"/>
+<circle cx="121" cy="98" r="30" fill="var(--illus-2)"/>
+<path d="M95 90a26 26 0 0 1 52 0" fill="none" stroke="var(--illus-line)" stroke-width="5" stroke-linecap="round"/>
+<circle cx="95" cy="98" r="6" fill="var(--illus-line)"/>
+<circle cx="147" cy="98" r="6" fill="var(--illus-line)"/>
+<path d="M147 103c5 3 7 10 3 15" fill="none" stroke="var(--illus-line)" stroke-width="4" stroke-linecap="round"/>
+<rect x="244" y="120" width="70" height="80" rx="18" fill="var(--illus-1)"/>
+<circle cx="279" cy="98" r="30" fill="var(--illus-1)"/>
+<path d="M253 90a26 26 0 0 1 52 0" fill="none" stroke="var(--illus-line)" stroke-width="5" stroke-linecap="round"/>
+<circle cx="253" cy="98" r="6" fill="var(--illus-line)"/>
+<circle cx="305" cy="98" r="6" fill="var(--illus-line)"/>
+<path d="M305 103c5 3 7 10 3 15" fill="none" stroke="var(--illus-line)" stroke-width="4" stroke-linecap="round"/>
+<path d="M180 70c8-10 20-16 20-16s12 6 20 16" fill="none" stroke="var(--illus-3)" stroke-width="4" stroke-linecap="round" opacity=".7"/>
+</svg></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap prose">
+      <h2>Our Company</h2>
+      <p>Since our founding in 1994, our company has grown from a small start-up in rural Texas to being a recognized leader in developing customized software solutions. For over 20 years, our company has developed customized software solutions for non-profits and government agencies located in rural and urban settings alike. Our software solutions are all developed in-house and built around our customers' insight and needs.</p>
+      <p>Today, we are located in Dallas, Texas. Our company has customers all over the USA and is spreading out internationally. We adapt with the market and provide some of the best customer support in the industry. We actively seek feedback on how we can better meet our valued clients' needs and continually push ourselves to present the best options on the market. We present customized solutions for each agency's specific needs.</p>
+
+      <h2>Our Mission</h2>
+      <p>We seek to provide you the software solution that you have been looking for: a system that is tailored to your needs. We provide you with a customized solution that works.</p>
+    </div>
+  </section>
+
+  <section class="why" style="padding-top:0;">
+    <div class="wrap">
+      <div class="call-banner" style="background:linear-gradient(135deg,rgba(23,179,163,0.12),rgba(29,91,214,0.12));border:1px solid var(--line);">
+        <div>
+          <h3 style="color:var(--navy);">Curious what our clients think?</h3>
+          <p style="color:var(--ink-soft);">Read verified reviews from transit agencies and community action agencies we've worked with for decades.</p>
+        </div>
+        <a class="btn btn-primary" href="#our-clients">Read Client Stories →</a>
+      </div>
+    </div>
+  </section>
+
+
+</div>
+
+<div id="our-clients" class="page">
+
+
+  <section class="page-hero">
+    <div class="wrap">
+      <span class="eyebrow on-dark">Our Clients</span>
+      <h1>Our solutions, their stories</h1>
+      <p>Real feedback from the transit agencies and community action agencies we've worked with — some for over 20 years.</p>
+      <div class="page-hero-media">
+        <div class="illus"><svg viewBox="0 0 400 260" role="img" aria-label="A smiling client alongside a five star rating">
+<circle cx="200" cy="140" r="108" fill="var(--illus-bg)"/>
+<rect x="150" y="150" width="100" height="80" rx="30" fill="var(--illus-1)"/>
+<circle cx="200" cy="108" r="46" fill="var(--illus-1)"/>
+<circle cx="184" cy="102" r="6" fill="var(--illus-line)"/>
+<circle cx="216" cy="102" r="6" fill="var(--illus-line)"/>
+<path d="M178 120c8 12 36 12 44 0" stroke="var(--illus-line)" stroke-width="5" stroke-linecap="round" fill="none"/>
+<g fill="var(--illus-3)">
+<path d="M108 96l7 15 17 2-12 12 3 17-15-9-15 9 3-17-12-12 17-2z"/>
+<path d="M152 56l7 15 17 2-12 12 3 17-15-9-15 9 3-17-12-12 17-2z"/>
+<path d="M200 42l7 15 17 2-12 12 3 17-15-9-15 9 3-17-12-12 17-2z"/>
+<path d="M248 56l7 15 17 2-12 12 3 17-15-9-15 9 3-17-12-12 17-2z"/>
+<path d="M292 96l7 15 17 2-12 12 3 17-15-9-15 9 3-17-12-12 17-2z"/>
+</g>
+</svg></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="rating-summary">
+        <span class="stars">★★★★★</span>
+        <strong>5.0 average</strong>
+        <span>Based on 5 verified client reviews</span>
+        <a href="mailto:info@shahsoftware.com?subject=Client%20Review" class="btn btn-outline btn-sm" style="margin-left:auto;">Share Your Story</a>
+      </div>
+
+      <div class="testimonial-full">
+
+        <div class="review-card">
+          <div class="stars">★★★★★</div>
+          <p class="quote">"I am writing this recommendation letter for the services we use from Shah Software. Our agency has been using their software for 15 plus years and have been a very satisfied customer. They offer the most competitive rates and the comprehensive functionality of the software, ability to add programs and funding sources on the fly for tracking, the support, the customization. He has excellent customer service skills and always delivers on their promises. If you have any additional questions or clarifications regarding Shah Software, please feel free to contact me through the contact details found below."</p>
+          <div class="reviewer">
+            <div class="avatar">PA</div>
+            <div>
+              <div class="name">Panna Adams</div>
+              <div class="role">Executive Director, Cornerstone Community Action Agency — Coleman, TX</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <div class="stars">★★★★★</div>
+          <p class="quote">"Colorado Valley Transit is one of the recipients of federal funds for running Microtransit in all 4 of our counties. We approached Shah Software 2 weeks prior to launching our new on-demand service and within those two weeks, we were fully functioning and running the Microtransit app with the customer booking features in English and Spanish. One of the great advantages of working with a smaller company like Shah Software was that we had direct access to the decision makers. We never had to deal with a sales representative who was only focused on making a sale. Shah Software was concerned about our overall project and how to meet our technological needs within our transportation system. After 2 short weeks, our customers can book their rides through the Shah Software app using their mobile device, and the requests go directly to the relevant driver on duty. This frees our dispatch staff from the task of having to assign the reservations to the drivers. When clients book their own trips, this also minimizes the amount of phone calls coming into the office for making reservations. Adopting this software much sooner would have been nice. However, the quick turnaround by Shah has made our dream come true. When I hear about other transit systems spending three times as much time on their project and still not being operational after six months, I realize that we made a wise choice in choosing Shah Software as our dispatch software vendor. We recommend Shah Software with high esteem."</p>
+          <div class="reviewer">
+            <div class="avatar">AW</div>
+            <div>
+              <div class="name">Angela Walke</div>
+              <div class="role">Deputy Director, Colorado Valley Transit — Columbus, TX</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <div class="stars">★★★★★</div>
+          <p class="quote">"I take pride in recommending Shah Software since we have been associated with it since the earliest stages and even helped kick start the transportation management software suite. Over two decades ago, I met Mr. Shah, the owner, for lunch in Uvalde, Texas. It was over lunch that I suggested his company come up with a transportation management software system more suited for small and rural transit agencies. I did not realize the chain of events I had just set in motion! Shah and I spent the next few months brainstorming: daily calling about transit agencies' needs and reporting requirements. Before I knew it, what started as a spontaneous suggestion grew into a full-fledged Transportation Management suite of software. I have been using Shah Software for the last 20 plus years. Without fail, Shah Software has adapted to meet the ever changing reporting requirements. Technical assistance is very quick. Our suggestions are taken seriously and many are later integrated into the system. Shah Software allows me to voice my concerns and have an active role in developing a system that works for me. I would only use Shah Software and it is all I recommend!"</p>
+          <div class="reviewer">
+            <div class="avatar">SC</div>
+            <div>
+              <div class="name">Sarah Cook</div>
+              <div class="role">General Manager, SWAP — Levelland, TX</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <div class="stars">★★★★★</div>
+          <p class="quote">"Shah Software has done a great job with their continuing development of cutting edge dispatching software. River Cities Public Transit has been a customer since 2006 and during that period our ridership has gone from 300 rides/day to 1,200 rides/day and a 24x7 service. The software is web-based and is extremely easy to navigate. The tech support at Shah Software is very responsive and will address immediately any concerns or issue that we may have. Without any reservation, we would recommend this software to any transit agency that is looking for a dispatching and scheduling system. If you have any questions, please feel free to call us at 605-945-0403."</p>
+          <div class="reviewer">
+            <div class="avatar">RB</div>
+            <div>
+              <div class="name">Ron Baumgart</div>
+              <div class="role">Executive Director, River Cities Public Transit — Pierre, SD</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <div class="stars">★★★★★</div>
+          <p class="quote">"It is my pleasure to submit a letter of recommendation for the Shah Software Electronic Fare Collection Program. Public Transit Services has been a long-standing customer of Shah Software with a 25 plus year relationship with Mr. Shah and his staff. During this time, our agency has witnessed the continued development of cutting-edge Dispatch/Scheduling Transportation Software Technologies. In January 2021, Public Transit Services purchased the Electronic Fare Collection Program to accommodate our clients. The fare integration has considerably improved fare reconciliation, client boarding, scheduling, and reporting. Our customers are more than pleased with the debit fare card option and continue to use it to this day. The program is user friendly and resulted in minimal training for our staff. I would strongly recommend the inclusion of the Electronic Fare Collection Program."</p>
+          <div class="reviewer">
+            <div class="avatar">RB</div>
+            <div>
+              <div class="name">Reta Brooks</div>
+              <div class="role">Executive Director, Public Transit Services — Weatherford, TX</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+</div>
+
+<div id="transportation-management" class="page">
+
+
+  <section class="page-hero">
+    <div class="wrap">
+      <span class="eyebrow on-dark">Transportation Management</span>
+      <h1>A suite of products for your unique needs</h1>
+      <p>Transportation Manager — a suite of products combined to create a comprehensive, web-based information system for transportation providers. Each agency selects the modules that best suit their needs. The system always includes functionality for client registration, trip reservations and scheduling, dispatching, trip billing, menu-driven built-in reports, easy ad hoc report creation, vehicle and driver tracking, vehicle maintenance and maintenance reminders, driver training and training reminders, and more.</p>
+      <div class="page-hero-media">
+        <div class="illus"><svg viewBox="0 0 400 260" role="img" aria-label="A driver helping a rider board an accessible bus">
+<circle cx="200" cy="130" r="112" fill="var(--illus-bg)"/>
+<rect x="238" y="208" width="130" height="10" rx="5" fill="var(--illus-line)" opacity=".3"/>
+<rect x="70" y="90" width="260" height="110" rx="22" fill="var(--illus-2)"/>
+<rect x="70" y="150" width="260" height="10" fill="var(--illus-line)" opacity=".25"/>
+<rect x="90" y="106" width="46" height="32" rx="6" fill="var(--illus-bg)"/>
+<rect x="146" y="106" width="46" height="32" rx="6" fill="var(--illus-bg)"/>
+<rect x="202" y="106" width="46" height="32" rx="6" fill="var(--illus-bg)"/>
+<rect x="258" y="106" width="46" height="32" rx="6" fill="var(--illus-bg)"/>
+<rect x="70" y="160" width="70" height="40" rx="8" fill="var(--illus-1)" opacity=".9"/>
+<path d="M70 200l70-40" stroke="var(--illus-3)" stroke-width="5" stroke-linecap="round"/>
+<circle cx="118" cy="212" r="18" fill="var(--illus-navy)"/>
+<circle cx="282" cy="212" r="18" fill="var(--illus-navy)"/>
+<circle cx="118" cy="212" r="7" fill="var(--illus-line)"/>
+<circle cx="282" cy="212" r="7" fill="var(--illus-line)"/>
+<circle cx="90" cy="176" r="14" fill="var(--illus-3)"/>
+<rect x="78" y="188" width="24" height="30" rx="10" fill="var(--illus-3)"/>
+<circle cx="56" cy="182" r="16" fill="var(--illus-1)"/>
+<rect x="44" y="196" width="24" height="34" rx="10" fill="var(--illus-1)"/>
+<path d="M68 200c8-4 14 0 18 8" stroke="var(--illus-line)" stroke-width="5" stroke-linecap="round" fill="none"/>
+</svg></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Additional Modules</span>
+        <h2>Every module your agency needs, in one system</h2>
+      </div>
+
+      <div class="feature-grid cols-3">
+        <div class="feature-card">
+          <div class="card-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          </div>
+          <h3>Auto Calling</h3>
+          <p>The night prior to a ride, the system sends an automated phone call to all scheduled clients, reducing no-shows and late cancellations. If the call is unanswered, the system will attempt to reach the passenger at set intervals. On the day of a scheduled ride, passengers receive a call to alert them when the bus is en route.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="card-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 5a2 2 0 0 1 2-2h3l2 5-2.5 1.5a11 11 0 0 0 5 5L14 12l5 2v3a2 2 0 0 1-2 2h-1C9.16 19 5 14.84 5 9V5z"/><path d="M18 2l3 3-3 3"/></svg>
+          </div>
+          <h3>Call Center</h3>
+          <p>Using the benefits of the VTCLI grant, veterans have access to a single 800 number in their state. This number connects them to a central office that finds a service to provide transportation to their destination. The call center can book the ride and send it electronically to the transit agency that provides services in the area.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="card-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></svg>
+          </div>
+          <h3>Cloud Optimization</h3>
+          <p>This allows the system to optimize trips by assigning routes to the most logical vehicle. The algorithm runs in the cloud, and optimization can be done for next- or same-day routes in scheduled increments of time. Optionally apply rules to create real-world optimized solutions.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="card-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>
+          </div>
+          <h3>Smart Cards / Fare Cards</h3>
+          <p>This feature benefits both the client and the transport service. Agencies create pre-paid smart cards; cards are scanned when the client boards and fares are deducted in real time. Issues in fare reconciliation are minimized, there are no transaction fees, and agencies do not need to coordinate with third-party banking or billing institutions. The agency stays in full control of the funds.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="card-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <h3>Locate My Bus</h3>
+          <p>This mobile app offers full control and convenience for passengers. Users can view details of their scheduled trips, find the exact location of their bus on a live map, and cancel rides when necessary. Parents with concerns about their child's location can view the bus's location as well as pick-up and drop-off times.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="card-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="10.51" x2="15.42" y2="6.49"/><line x1="8.59" y1="13.49" x2="15.42" y2="17.51"/></svg>
+          </div>
+          <h3>Regional Coordination</h3>
+          <p>Using the concept of a live bulletin board, transit agencies are able to exchange information with partnering agencies. They may share resources, receive help when capacities are reached, and move passengers to other vehicles in areas where destinations overlap.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="card-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+          </div>
+          <h3>Tablet Integration</h3>
+          <p>Drivers use a tablet to obtain electronic manifests, log pre-trip inspections, get their assigned routes, and send messages to dispatch staff. Fleet managers receive any exception notices, and dispatch is able to view pick-ups and drop-offs with a visual indicator.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="spotlight">
+    <div class="wrap spotlight-grid">
+      <div>
+        <span class="spotlight-tag">One of Our Solutions at Work</span>
+        <h3>RFID Takes a Ride With School Bus Fare System</h3>
+        <p>South Dakota's River Cities Public Transit is expanding its smart-card bus-fare solution that enables school children and other passengers to simply tap the card when they enter a bus, automatically deducting the fare from their prepaid balance.</p>
+        <div style="margin-top:20px;">
+          <a href="#" class="btn btn-outline">Read Complete Article →</a>
+          <p style="margin-top:10px;font-size:.82rem;color:var(--ink-soft);">[PLACEHOLDER: link to full press article]</p>
+        </div>
+      </div>
+      <div class="spotlight-media">
+        <div class="illus"><svg viewBox="0 0 400 260" role="img" aria-label="A transit driver using an in-vehicle tablet">
+<circle cx="200" cy="130" r="110" fill="var(--illus-bg)"/>
+<path d="M70 210c0-70 58-126 130-126s130 56 130 126" fill="none" stroke="var(--illus-2)" stroke-width="14" stroke-linecap="round" opacity=".55"/>
+<circle cx="132" cy="146" r="46" fill="none" stroke="var(--illus-1)" stroke-width="10"/>
+<circle cx="132" cy="146" r="6" fill="var(--illus-1)"/>
+<path d="M132 106v40M132 146l32 20M132 146l-34 12" stroke="var(--illus-1)" stroke-width="6" stroke-linecap="round"/>
+<circle cx="248" cy="110" r="30" fill="var(--illus-2)"/>
+<rect x="220" y="138" width="56" height="64" rx="16" fill="var(--illus-2)"/>
+<path d="M236 104c4 8 16 8 20 0" stroke="var(--illus-line)" stroke-width="4" stroke-linecap="round" fill="none"/>
+<rect x="256" y="168" width="52" height="38" rx="7" fill="var(--illus-3)"/>
+<rect x="263" y="176" width="38" height="4" rx="2" fill="var(--illus-navy)" opacity=".6"/>
+<rect x="263" y="184" width="26" height="4" rx="2" fill="var(--illus-navy)" opacity=".4"/>
+</svg></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="call-banner" style="background:linear-gradient(135deg,rgba(23,179,163,0.12),rgba(29,91,214,0.12));border:1px solid var(--line);">
+        <div>
+          <h3 style="color:var(--navy);">Ready to modernize your transit operations?</h3>
+          <p style="color:var(--ink-soft);">Talk to our team about which modules fit your agency.</p>
+        </div>
+        <a class="btn btn-primary" href="#contact">Get a Free Consultation</a>
+      </div>
+    </div>
+  </section>
+
+
+</div>
+
+<div id="case-management" class="page">
+
+
+  <section class="page-hero">
+    <div class="wrap">
+      <span class="eyebrow on-dark">Case Management</span>
+      <h1>Our solutions to better serve your clients</h1>
+      <p>A fully web-based, comprehensive information system and management solution designed for use by Community Action Agencies and similar programs or organizations in the business of helping people.</p>
+      <div class="page-hero-media">
+        <div class="illus"><svg viewBox="0 0 400 260" role="img" aria-label="A caregiver embracing a client">
+<circle cx="200" cy="128" r="110" fill="var(--illus-bg)"/>
+<rect x="60" y="200" width="280" height="10" rx="5" fill="var(--illus-line)" opacity=".25"/>
+<rect x="128" y="120" width="80" height="92" rx="26" fill="var(--illus-2)" transform="rotate(-8 168 166)"/>
+<rect x="188" y="120" width="80" height="92" rx="26" fill="var(--illus-1)" transform="rotate(8 228 166)"/>
+<circle cx="176" cy="98" r="32" fill="var(--illus-2)"/>
+<circle cx="224" cy="98" r="32" fill="var(--illus-1)"/>
+<path d="M164 96c4 8 16 8 20 0" stroke="var(--illus-line)" stroke-width="4" stroke-linecap="round" fill="none"/>
+<path d="M212 96c4 8 16 8 20 0" stroke="var(--illus-line)" stroke-width="4" stroke-linecap="round" fill="none"/>
+<path d="M200 62c-10-14-34-14-34 6 0 16 34 34 34 34s34-18 34-34c0-20-24-20-34-6z" fill="var(--illus-3)"/>
+</svg></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Features</span>
+        <h2>Everything your agency needs, in one place</h2>
+      </div>
+
+      <div class="feature-grid">
+        <div class="feature-card">
+          <div class="card-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+          </div>
+          <h3>Fastrack</h3>
+          <p>A new tool for online application. Clients can now submit applications for assistance online, from any smart device, from any location.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="card-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+          </div>
+          <h3>Portability</h3>
+          <p>The system is web-based and may be accessed from any web-enabled device such as iPads, tablets, and PCs. Information is safely stored online in the cloud.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="card-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          </div>
+          <h3>Client Tracking</h3>
+          <p>You are able to track clients, client services, enrollment, and outcomes for the current program year and previous program years — beginning from the client's first service.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="card-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+          </div>
+          <h3>Reporting</h3>
+          <p>All reports you need, available from a single button click. This includes Unduplicated Reports, Service Activity reports, Outcomes (NPI) reports, enrollment reports, Front Desk reports, Reports on Walk-ins, Needs Assessment Reports, surveys, fund expenditure reports, balance sheet reports, notices of payments, and payment pledges.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="card-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          </div>
+          <h3>Export &amp; Bookkeeping</h3>
+          <p>Easily export data — Payment Pledges, Notice of Payments — into your bookkeeping software with a single click. All reports allow queries to narrow down the selection to specific transactions behind any totals on your reports.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="card-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+          </div>
+          <h3>Convenience</h3>
+          <p>The web-based system allows you to access your system from anywhere, providing true mobility. Electronic signature capability allows case workers to make home visits for disabled clients. Uploading and storing client documents as part of the case file allows easy retrieval when necessary.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="call-banner" style="background:linear-gradient(135deg,rgba(23,179,163,0.12),rgba(29,91,214,0.12));border:1px solid var(--line);">
+        <div>
+          <h3 style="color:var(--navy);">Ready to modernize your case management?</h3>
+          <p style="color:var(--ink-soft);">Let's talk about the modules that fit your agency's programs.</p>
+        </div>
+        <a class="btn btn-primary" href="#contact">Get a Free Consultation</a>
+      </div>
+    </div>
+  </section>
+
+
+</div>
+
+<div id="contact" class="page">
+
+
+  <section class="page-hero">
+    <div class="wrap">
+      <span class="eyebrow on-dark">Contact Us</span>
+      <h1>Interested in learning more? Contact us!</h1>
+      <p>Reach out for a product demo, pricing, or general questions — our team responds within one business day.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap contact-layout">
+
+      <div class="info-block">
+        <h2>Get in touch</h2>
+        <ul class="info-list">
+          <li>
+            <div class="card-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            </div>
+            <div>
+              <strong>Phone</strong>
+              <a href="tel:+18009682748">1-800-968-2748</a>
+            </div>
+          </li>
+          <li>
+            <div class="card-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </div>
+            <div>
+              <strong>Email</strong>
+              <a href="mailto:info@shahsoftware.com">info@shahsoftware.com</a>
+            </div>
+          </li>
+          <li>
+            <div class="card-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <div>
+              <strong>Location</strong>
+              <span class="value">13601 Preston Rd, Suite E450<br>Dallas, TX 75240</span><br>
+              <a href="https://www.google.com/maps/search/?api=1&query=13601+Preston+Rd+Suite+E450+Dallas+TX+75240" target="_blank" rel="noopener">Get Directions →</a>
+            </div>
+          </li>
+          <li>
+            <div class="card-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </div>
+            <div>
+              <strong>Business Hours</strong>
+              <span class="value">[PLACEHOLDER: Mon–Fri, 9:00 AM–5:00 PM]<br>[PLACEHOLDER: Sat–Sun, Closed]</span>
+            </div>
+          </li>
+        </ul>
+        <div class="hours-note">[PLACEHOLDER: confirm business hours and add here]</div>
+      </div>
+
+      <div class="form-card">
+        <h2>Send us a message</h2>
+        <p>Fill out the form and a member of our team will follow up shortly.</p>
+
+        <form action="#" method="post">
+          <div class="form-row two">
+            <div>
+              <label for="fname">First Name *</label>
+              <input type="text" id="fname" name="fname" required>
+            </div>
+            <div>
+              <label for="lname">Last Name *</label>
+              <input type="text" id="lname" name="lname" required>
+            </div>
+          </div>
+
+          <div class="form-row two">
+            <div>
+              <label for="title">Title</label>
+              <input type="text" id="title" name="title">
+            </div>
+            <div>
+              <label for="agency">Agency Name *</label>
+              <input type="text" id="agency" name="agency" required>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div>
+              <label for="agency-address">Agency Address, City, State, Zip *</label>
+              <input type="text" id="agency-address" name="agency-address" required>
+            </div>
+          </div>
+
+          <div class="form-row two">
+            <div>
+              <label for="email">Email *</label>
+              <input type="email" id="email" name="email" required>
+            </div>
+            <div>
+              <label for="phone">Phone Number *</label>
+              <input type="tel" id="phone" name="phone" required>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div>
+              <label>Products of Interest *</label>
+              <div class="checkbox-group">
+                <label><input type="checkbox" name="products" value="CaseManager - NewGen"> CaseManager – NewGen</label>
+                <label><input type="checkbox" name="products" value="Transportation Manager - NewGen"> Transportation Manager – NewGen</label>
+                <label><input type="checkbox" name="products" value="Vehicle Tracking"> Vehicle Tracking</label>
+                <label><input type="checkbox" name="products" value="Automated Fare Collection with Smart Cards"> Automated Fare Collection with Smart Cards</label>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div>
+              <label for="comments">Additional Comments</label>
+              <textarea id="comments" name="comments"></textarea>
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn-primary">Submit</button>
+
+          <div class="form-note">[PLACEHOLDER: connect this form to your email/CRM — e.g. Formspree, Netlify Forms, or a backend endpoint. This form is presentational only until wired up.]</div>
+        </form>
+      </div>
+
+    </div>
+
+    <div class="wrap">
+      <div class="map-embed">
+        <iframe src="https://www.google.com/maps?q=13601+Preston+Rd+Suite+E450+Dallas+TX+75240&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Shah Software location map"></iframe>
+      </div>
+    </div>
+  </section>
+
+
+</div>
+
+<div id="privacy-policy" class="page">
+
+
+  <section class="page-hero" style="padding:44px 0 48px;">
+    <div class="wrap">
+      <span class="eyebrow on-dark">Legal</span>
+      <h1>Privacy Policy</h1>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap prose">
+      <p class="meta">Effective date: April 13, 2019</p>
+
+      <p>Shah Software ("us", "we", or "our") operates the http://www.shahsoftware.com website, MyRideGo mobile application, My-Ride mobile application, Driver-Connect android application, Transportation Manager reservation system, Web Ride Requests, Smart Card System, and AVL Tracking System (the "Service").</p>
+
+      <p>This page informs you of our policies regarding the collection, use, and disclosure of personal data when you use our Service and the choices you have associated with that data.</p>
+
+      <p>We use your data to provide and improve the Service. By using the Service, you agree to the collection and use of information in accordance with this policy. Unless otherwise defined in this Privacy Policy, terms used in this Privacy Policy have the same meanings as in our Terms and Conditions.</p>
+
+      <h2>Information Collection And Use</h2>
+      <p>We collect several different types of information for various purposes to provide and improve our Service to you.</p>
+
+      <h3>Types of Data Collected</h3>
+      <h3>Personal Data</h3>
+      <p>While using our Service, we may ask you to provide us with certain personally identifiable information that can be used to contact or identify you ("Personal Data"). Personally identifiable information may include, but is not limited to:</p>
+      <ul>
+        <li>Email address</li>
+        <li>First name and last name</li>
+        <li>Phone number</li>
+        <li>Address, State, Province, ZIP/Postal code, City</li>
+        <li>Cookies and Usage Data</li>
+      </ul>
+
+      <h3>Usage Data</h3>
+      <p>We may also collect information that your browser sends whenever you visit our Service or when you access the Service by or through a mobile device ("Usage Data").</p>
+      <p>This Usage Data may include information such as your computer's Internet Protocol address (e.g. IP address), browser type, browser version, the pages of our Service that you visit, the time and date of your visit, the time spent on those pages, unique device identifiers and other diagnostic data.</p>
+      <p>When you access the Service by or through a mobile device, this Usage Data may include information such as the type of mobile device you use, your mobile device unique ID, the IP address of your mobile device, your mobile operating system, the type of mobile internet browser you use, unique device identifiers and other diagnostic data.</p>
+
+      <h3>Tracking &amp; Cookies Data</h3>
+      <p>We use cookies and similar tracking technologies to track the activity on our Service and hold certain information.</p>
+      <p>Cookies are files with small amount of data which may include an anonymous unique identifier. Cookies are sent to your browser from a website and stored on your device. Tracking technologies also used are beacons, tags, and scripts to collect and track information and to improve and analyze our Service.</p>
+      <p>You can instruct your browser to refuse all cookies or to indicate when a cookie is being sent. However, if you do not accept cookies, you may not be able to use some portions of our Service.</p>
+      <p>Examples of Cookies we use:</p>
+      <ul>
+        <li><strong>Session Cookies.</strong> We use Session Cookies to operate our Service.</li>
+        <li><strong>Preference Cookies.</strong> We use Preference Cookies to remember your preferences and various settings.</li>
+        <li><strong>Security Cookies.</strong> We use Security Cookies for security purposes.</li>
+      </ul>
+
+      <h2>Use of Data</h2>
+      <p>Shah Software uses the collected data for various purposes:</p>
+      <ul>
+        <li>To provide and maintain the Service</li>
+        <li>To notify you about changes to our Service</li>
+        <li>To allow you to participate in interactive features of our Service when you choose to do so</li>
+        <li>To provide customer care and support</li>
+        <li>To provide analysis or valuable information so that we can improve the Service</li>
+        <li>To monitor the usage of the Service</li>
+        <li>To detect, prevent and address technical issues</li>
+      </ul>
+
+      <h2>Transfer Of Data</h2>
+      <p>Your information, including Personal Data, may be transferred to — and maintained on — computers located outside of your state, province, country or other governmental jurisdiction where the data protection laws may differ from those from your jurisdiction.</p>
+      <p>If you are located outside United States and choose to provide information to us, please note that we transfer the data, including Personal Data, to United States and process it there.</p>
+      <p>Your consent to this Privacy Policy followed by your submission of such information represents your agreement to that transfer.</p>
+      <p>Shah Software will take all steps reasonably necessary to ensure that your data is treated securely and in accordance with this Privacy Policy and no transfer of your Personal Data will take place to an organization or a country unless there are adequate controls in place including the security of your data and other personal information.</p>
+
+      <h2>Disclosure Of Data</h2>
+      <h3>Legal Requirements</h3>
+      <p>Shah Software may disclose your Personal Data in the good faith belief that such action is necessary to:</p>
+      <ul>
+        <li>To comply with a legal obligation</li>
+        <li>To protect and defend the rights or property of Shah Software</li>
+        <li>To prevent or investigate possible wrongdoing in connection with the Service</li>
+        <li>To protect the personal safety of users of the Service or the public</li>
+        <li>To protect against legal liability</li>
+      </ul>
+
+      <h2>Security Of Data</h2>
+      <p>The security of your data is important to us, but remember that no method of transmission over the Internet, or method of electronic storage is 100% secure. While we strive to use commercially acceptable means to protect your Personal Data, we cannot guarantee its absolute security.</p>
+
+      <h2>Service Providers</h2>
+      <p>We may employ third party companies and individuals to facilitate our Service ("Service Providers"), to provide the Service on our behalf, to perform Service-related services or to assist us in analyzing how our Service is used.</p>
+      <p>These third parties have access to your Personal Data only to perform these tasks on our behalf and are obligated not to disclose or use it for any other purpose.</p>
+
+      <h2>Links To Other Sites</h2>
+      <p>Our Service may contain links to other sites that are not operated by us. If you click on a third party link, you will be directed to that third party's site. We strongly advise you to review the Privacy Policy of every site you visit.</p>
+      <p>We have no control over and assume no responsibility for the content, privacy policies or practices of any third party sites or services.</p>
+
+      <h2>Children's Privacy</h2>
+      <p>Our Service does not address anyone under the age of 18 ("Children").</p>
+      <p>We do not knowingly collect personally identifiable information from anyone under the age of 18. If you are a parent or guardian and have provided us with your children's information so that they can ride the transit buses, we do not hold any responsibility for this information. If we become aware that we have collected Personal Data from children without verification of parental consent, we take steps to remove that information from our servers.</p>
+
+      <h2>Data Deletion</h2>
+      <p>We value your privacy and are committed to ensuring that your personal data is handled with the utmost care and respect. If you wish to delete or request removal of your personal data that we have collected, please follow the process outlined below:</p>
+
+      <h3>1. Requesting Data Deletion</h3>
+      <p>You have the right to request the deletion of any personal data we hold about you. To submit a data deletion request, please contact us at <a href="mailto:support@shahsoftware.com">support@shahsoftware.com</a> with the subject line "Data Deletion Request."</p>
+
+      <h3>2. Processing Time</h3>
+      <p>Upon receiving your request, we will process it within 3 days from the date of submission. You will be notified once your request has been completed.</p>
+
+      <h3>3. What Data Will Be Deleted</h3>
+      <p>When we process your request, we will remove your personal data from our databases, including but not limited to:</p>
+      <ul>
+        <li>Account information (name, email address, etc.)</li>
+        <li>Transaction history</li>
+        <li>Communication history</li>
+      </ul>
+      <p>Please note that certain information may be retained in order to comply with legal obligations or to resolve disputes, if applicable.</p>
+
+      <h3>4. Exclusions</h3>
+      <p>Some data may not be fully deleted from our systems due to legal or contractual obligations. In these cases, we will only retain the necessary information for the required period, after which it will be securely erased.</p>
+
+      <h3>5. Confirmation of Deletion</h3>
+      <p>Once your personal data has been deleted, we will send you a confirmation email.</p>
+      <p>If you have any questions about your data deletion request or need further assistance, please don't hesitate to contact us at <a href="mailto:support@shahsoftware.com">support@shahsoftware.com</a>.</p>
+
+      <h2>Changes To This Privacy Policy</h2>
+      <p>We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page.</p>
+      <p>We will let you know via email and/or a prominent notice on our Service, prior to the change becoming effective and update the "effective date" at the top of this Privacy Policy.</p>
+      <p>You are advised to review this Privacy Policy periodically for any changes. Changes to this Privacy Policy are effective when they are posted on this page.</p>
+
+      <h2>Contact Us</h2>
+      <p>If you have any questions about this Privacy Policy, please contact us:</p>
+      <ul>
+        <li>By email: <a href="mailto:support@shahsoftware.com">support@shahsoftware.com</a></li>
+        <li>By phone number: <a href="tel:+18009682748">800-968-2748</a></li>
+      </ul>
+    </div>
+  </section>
+
+
+</div>
+
+<div id="home" class="page">
+
+
+  <!-- ===== HERO ===== -->
+  <section class="hero" style="padding-top:56px;">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="hero-badge">⚡ Trusted since 1994 · Dallas, TX</span>
+        <h1>Custom software that keeps your agency <span>moving forward.</span></h1>
+        <p class="lead">Shah Software builds transportation management and case management systems for transit providers, non-profits, and community action agencies nationwide — customized to the way you actually work.</p>
+
+        <div class="hero-actions">
+          <a href="#contact" class="btn btn-primary">Get a Free Consultation</a>
+          <a href="#products" class="btn btn-ghost">See Our Products →</a>
+        </div>
+
+        <div class="hero-trust">
+          <div><strong>1994</strong>Founded in Dallas, TX</div>
+          <div><strong>Nationwide</strong>Customers across the USA</div>
+          <div><strong>In-House</strong>Software built &amp; supported by our own team</div>
+        </div>
+      </div>
+
+      <div class="hero-media">
+        <div class="illus"><svg viewBox="0 0 400 260" role="img" aria-label="Customer support representative on a call">
+<circle cx="200" cy="122" r="108" fill="var(--illus-bg)"/>
+<rect x="60" y="196" width="280" height="12" rx="6" fill="var(--illus-2)" opacity=".35"/>
+<rect x="86" y="150" width="110" height="52" rx="8" fill="var(--illus-2)" opacity=".55"/>
+<rect x="92" y="156" width="98" height="34" rx="4" fill="var(--illus-line)"/>
+<rect x="100" y="162" width="82" height="4" rx="2" fill="var(--illus-3)" opacity=".7"/>
+<rect x="100" y="171" width="60" height="4" rx="2" fill="var(--illus-3)" opacity=".45"/>
+<rect x="170" y="112" width="76" height="88" rx="20" fill="var(--illus-1)"/>
+<circle cx="208" cy="88" r="34" fill="var(--illus-1)"/>
+<path d="M178 78a30 30 0 0 1 60 0" fill="none" stroke="var(--illus-line)" stroke-width="6" stroke-linecap="round"/>
+<circle cx="178" cy="86" r="7" fill="var(--illus-line)"/>
+<circle cx="238" cy="86" r="7" fill="var(--illus-line)"/>
+<path d="M238 92c6 4 8 12 4 18" fill="none" stroke="var(--illus-line)" stroke-width="5" stroke-linecap="round"/>
+<circle cx="244" cy="112" r="5" fill="var(--illus-line)"/>
+<path d="M256 70c14 4 24 16 24 30" fill="none" stroke="var(--illus-3)" stroke-width="4" stroke-linecap="round" opacity=".8"/>
+<path d="M266 58c22 4 38 24 38 48" fill="none" stroke="var(--illus-3)" stroke-width="4" stroke-linecap="round" opacity=".5"/>
+</svg></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PRODUCTS ===== -->
+  <section id="products">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">What We Build</span>
+        <h2>Software built for transportation &amp; case management</h2>
+        <p>Shah Software is a recognized leader in developing customized software solutions for transportation and community action agencies. For over twenty years, our company has delivered solutions to customers all over the United States. Our software solutions are tailored to your exact needs — we provide you with a system that works.</p>
+      </div>
+
+      <div class="grid-2">
+        <div class="card">
+          <div class="card-media">
+            <div class="illus"><svg viewBox="0 0 400 260" role="img" aria-label="A driver helping a rider board an accessible bus">
+<circle cx="200" cy="130" r="112" fill="var(--illus-bg)"/>
+<rect x="238" y="208" width="130" height="10" rx="5" fill="var(--illus-line)" opacity=".3"/>
+<rect x="70" y="90" width="260" height="110" rx="22" fill="var(--illus-2)"/>
+<rect x="70" y="150" width="260" height="10" fill="var(--illus-line)" opacity=".25"/>
+<rect x="90" y="106" width="46" height="32" rx="6" fill="var(--illus-bg)"/>
+<rect x="146" y="106" width="46" height="32" rx="6" fill="var(--illus-bg)"/>
+<rect x="202" y="106" width="46" height="32" rx="6" fill="var(--illus-bg)"/>
+<rect x="258" y="106" width="46" height="32" rx="6" fill="var(--illus-bg)"/>
+<rect x="70" y="160" width="70" height="40" rx="8" fill="var(--illus-1)" opacity=".9"/>
+<path d="M70 200l70-40" stroke="var(--illus-3)" stroke-width="5" stroke-linecap="round"/>
+<circle cx="118" cy="212" r="18" fill="var(--illus-navy)"/>
+<circle cx="282" cy="212" r="18" fill="var(--illus-navy)"/>
+<circle cx="118" cy="212" r="7" fill="var(--illus-line)"/>
+<circle cx="282" cy="212" r="7" fill="var(--illus-line)"/>
+<circle cx="90" cy="176" r="14" fill="var(--illus-3)"/>
+<rect x="78" y="188" width="24" height="30" rx="10" fill="var(--illus-3)"/>
+<circle cx="56" cy="182" r="16" fill="var(--illus-1)"/>
+<rect x="44" y="196" width="24" height="34" rx="10" fill="var(--illus-1)"/>
+<path d="M68 200c8-4 14 0 18 8" stroke="var(--illus-line)" stroke-width="5" stroke-linecap="round" fill="none"/>
+</svg></div>
+          </div>
+          <h3>Transportation Management</h3>
+          <p>A full suite for client registration, trip reservations and scheduling, dispatching, billing, vehicle and driver tracking, maintenance reminders, and more — built for transit providers of every size.</p>
+          <a class="card-link" href="#transportation-management">Explore Transportation Management →</a>
+        </div>
+
+        <div class="card">
+          <div class="card-media">
+            <div class="illus"><svg viewBox="0 0 400 260" role="img" aria-label="A caregiver embracing a client">
+<circle cx="200" cy="128" r="110" fill="var(--illus-bg)"/>
+<rect x="60" y="200" width="280" height="10" rx="5" fill="var(--illus-line)" opacity=".25"/>
+<rect x="128" y="120" width="80" height="92" rx="26" fill="var(--illus-2)" transform="rotate(-8 168 166)"/>
+<rect x="188" y="120" width="80" height="92" rx="26" fill="var(--illus-1)" transform="rotate(8 228 166)"/>
+<circle cx="176" cy="98" r="32" fill="var(--illus-2)"/>
+<circle cx="224" cy="98" r="32" fill="var(--illus-1)"/>
+<path d="M164 96c4 8 16 8 20 0" stroke="var(--illus-line)" stroke-width="4" stroke-linecap="round" fill="none"/>
+<path d="M212 96c4 8 16 8 20 0" stroke="var(--illus-line)" stroke-width="4" stroke-linecap="round" fill="none"/>
+<path d="M200 62c-10-14-34-14-34 6 0 16 34 34 34 34s34-18 34-34c0-20-24-20-34-6z" fill="var(--illus-3)"/>
+</svg></div>
+          </div>
+          <h3>Case Management</h3>
+          <p>A fully web-based information system for Community Action Agencies to track clients, services, enrollment, and outcomes — from a client's very first service onward.</p>
+          <a class="card-link" href="#case-management">Explore Case Management →</a>
+        </div>
+      </div>
+
+      <div style="text-align:center;margin-top:36px;">
+        <a href="#our-company" class="btn btn-outline">Learn About Our Company</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== WHY CHOOSE US ===== -->
+  <section id="why" class="why">
+    <div class="wrap why-grid">
+      <div class="why-media">
+        <div class="illus"><svg viewBox="0 0 400 260" role="img" aria-label="Support staff wearing headsets in the office">
+<circle cx="200" cy="120" r="108" fill="var(--illus-bg)"/>
+<rect x="46" y="188" width="150" height="10" rx="5" fill="var(--illus-2)" opacity=".35"/>
+<rect x="204" y="188" width="150" height="10" rx="5" fill="var(--illus-1)" opacity=".35"/>
+<rect x="86" y="120" width="70" height="80" rx="18" fill="var(--illus-2)"/>
+<circle cx="121" cy="98" r="30" fill="var(--illus-2)"/>
+<path d="M95 90a26 26 0 0 1 52 0" fill="none" stroke="var(--illus-line)" stroke-width="5" stroke-linecap="round"/>
+<circle cx="95" cy="98" r="6" fill="var(--illus-line)"/>
+<circle cx="147" cy="98" r="6" fill="var(--illus-line)"/>
+<path d="M147 103c5 3 7 10 3 15" fill="none" stroke="var(--illus-line)" stroke-width="4" stroke-linecap="round"/>
+<rect x="244" y="120" width="70" height="80" rx="18" fill="var(--illus-1)"/>
+<circle cx="279" cy="98" r="30" fill="var(--illus-1)"/>
+<path d="M253 90a26 26 0 0 1 52 0" fill="none" stroke="var(--illus-line)" stroke-width="5" stroke-linecap="round"/>
+<circle cx="253" cy="98" r="6" fill="var(--illus-line)"/>
+<circle cx="305" cy="98" r="6" fill="var(--illus-line)"/>
+<path d="M305 103c5 3 7 10 3 15" fill="none" stroke="var(--illus-line)" stroke-width="4" stroke-linecap="round"/>
+<path d="M180 70c8-10 20-16 20-16s12 6 20 16" fill="none" stroke="var(--illus-3)" stroke-width="4" stroke-linecap="round" opacity=".7"/>
+</svg></div>
+      </div>
+
+      <div>
+        <span class="eyebrow">Why Choose Us</span>
+        <h2 style="font-size:clamp(1.6rem,3.6vw,2.1rem);margin-bottom:22px;letter-spacing:-0.01em;">A software partner you can actually rely on</h2>
+
+        <div class="why-list">
+          <div class="why-item">
+            <div class="num">1</div>
+            <div>
+              <h3>30 years in business</h3>
+              <p>Since our founding in 1994, we've grown from a small start-up in rural Texas into a recognized leader in customized software — without losing the personal touch.</p>
+            </div>
+          </div>
+          <div class="why-item">
+            <div class="num">2</div>
+            <div>
+              <h3>Built in-house, around you</h3>
+              <p>Every solution is developed in-house and built around our customers' insight and needs — not off-the-shelf software forced to fit.</p>
+            </div>
+          </div>
+          <div class="why-item">
+            <div class="num">3</div>
+            <div>
+              <h3>Direct access to decision-makers</h3>
+              <p>Clients tell us they never get routed through a sales rep — you work directly with the people who understand your system and can make it better.</p>
+            </div>
+          </div>
+          <div class="why-item">
+            <div class="num">4</div>
+            <div>
+              <h3>Support that actually responds</h3>
+              <p>From quick technical assistance to client suggestions that make it into the product, our team stays hands-on long after go-live.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== REVIEWS ===== -->
+  <section id="reviews">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Client Reviews</span>
+        <h2>What our clients say</h2>
+        <p>A 5.0-star average across verified reviews from transit agencies and community action agencies nationwide.</p>
+      </div>
+
+      <div class="reviews-grid">
+        <div class="review-card">
+          <div class="stars">★★★★★</div>
+          <p class="quote">"We approached Shah Software 2 weeks prior to launching our new on-demand service and within those two weeks, we were fully functioning... One of the great advantages of working with a smaller company like Shah Software was that we had direct access to the decision makers."</p>
+          <div class="reviewer">
+            <div class="avatar">AW</div>
+            <div>
+              <div class="name">Angela Walke</div>
+              <div class="role">Deputy Director, Colorado Valley Transit — Columbus, TX</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <div class="stars">★★★★★</div>
+          <p class="quote">"I have been using Shah Software for the last 20 plus years. Without fail, Shah Software has adapted to meet the ever changing reporting requirements. Technical assistance is very quick... I would only use Shah Software and it is all I recommend!"</p>
+          <div class="reviewer">
+            <div class="avatar">SC</div>
+            <div>
+              <div class="name">Sarah Cook</div>
+              <div class="role">General Manager, SWAP — Levelland, TX</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <div class="stars">★★★★★</div>
+          <p class="quote">"River Cities Public Transit has been a customer since 2006 and during that period our ridership has gone from 300 rides/day to 1,200 rides/day and 24x7 service... The tech support at Shah Software is very responsive."</p>
+          <div class="reviewer">
+            <div class="avatar">RB</div>
+            <div>
+              <div class="name">Ron Baumgart</div>
+              <div class="role">Executive Director, River Cities Public Transit — Pierre, SD</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div style="text-align:center;margin-top:36px;">
+        <a href="#our-clients" class="btn btn-outline">Read All Client Stories →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT ===== -->
+  <section id="contact-teaser" class="contact-hero-strip">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow on-dark">Get In Touch</span>
+        <h2>Let's talk about your project</h2>
+        <p>Reach out and we'll get back to you within one business day.</p>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-card">
+          <div class="card-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          </div>
+          <h3>Call us</h3>
+          <p>Speak with our team directly.</p>
+          <a class="link" href="tel:+18009682748">1-800-968-2748 →</a>
+        </div>
+
+        <div class="contact-card">
+          <div class="card-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </div>
+          <h3>Email us</h3>
+          <p>Send project details anytime.</p>
+          <a class="link" href="mailto:info@shahsoftware.com">info@shahsoftware.com →</a>
+        </div>
+
+        <div class="contact-card">
+          <div class="card-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <h3>Visit us</h3>
+          <p>13601 Preston Rd, Suite E450<br>Dallas, TX 75240</p>
+        </div>
+
+        <div class="contact-card">
+          <div class="card-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <h3>Business hours</h3>
+          <p>[PLACEHOLDER: Mon–Fri, 9:00 AM–5:00 PM]<br>[PLACEHOLDER: Sat–Sun, Closed]</p>
+        </div>
+      </div>
+
+      <div class="call-banner">
+        <div>
+          <h3>Prefer to talk it through?</h3>
+          <p>Tap below to call us right now — no forms, no waiting.</p>
+        </div>
+        <div style="display:flex;gap:12px;flex-wrap:wrap;">
+          <a class="btn btn-primary" href="tel:+18009682748">📞 Call 1-800-968-2748</a>
+          <a class="btn btn-ghost" href="#contact">Send a Message →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+</div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="#home" class="logo">
+          <span class="logo-mark">SS</span>
+          Shah Software
+        </a>
+        <p>Started in 1994, today the company has customers all over the USA. Our corporate office is based in Dallas, Texas. The company is involved in developing customized software solutions for non-profits.</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Pages</h4>
+        <ul>
+          <li><a href="#our-company">Our Company</a></li>
+          <li><a href="#our-clients">Our Clients</a></li>
+          <li><a href="#transportation-management">Transportation Management</a></li>
+          <li><a href="#case-management">Case Management</a></li>
+          <li><a href="#contact">Contact Us</a></li>
+          <li><a href="#privacy-policy">Privacy Policy</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Information</h4>
+        <ul>
+          <li><a href="tel:+18009682748">1-800-968-2748</a></li>
+          <li><a href="mailto:info@shahsoftware.com">info@shahsoftware.com</a></li>
+          <li class="plain">13601 Preston Rd, Suite E450<br>Dallas, TX 75240</li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Location</h4>
+        <div class="footer-map"><iframe src="https://www.google.com/maps?q=13601+Preston+Rd+Suite+E450+Dallas+TX+75240&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Shah Software location map"></iframe></div>
+        <ul style="margin-top:12px;">
+          <li><a href="https://www.google.com/maps/search/?api=1&query=13601+Preston+Rd+Suite+E450+Dallas+TX+75240" target="_blank" rel="noopener">Get Directions →</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>Copyright Shah Software. All Rights Reserved.</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
